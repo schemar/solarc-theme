@@ -1,24 +1,21 @@
 # SolArc Theme
-
 SolArc is a flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell which supports GTK 3 and GTK 2 based desktop environments like Gnome, Unity, Budgie, Pantheon, XFCE, Mate, etc.
 
-### SolArc is available in three variants
+SolArc is based on the Arc theme: https://github.com/horst3180/arc-theme
+Colours are based on the Solarized colour scheme by [Ethan Schoonover](https://github.com/altercation): https://github.com/altercation/solarized
 
-##### SolArc
+## SolArc is available in three variants
+### SolArc
+![A screenshot of the Arc theme](https://github.com/apheleia/solarc-theme/blob/master/images/preview-light.png?raw=true)
 
-![A screenshot of the Arc theme](http://i.imgur.com/Ph5ObOa.png)
+### SolArc-Darker
+![A screenshot of the Arc-Darker theme](https://github.com/apheleia/solarc-theme/blob/master/images/preview-darker.png?raw=true)
 
-##### SolArc-Darker
-
-![A screenshot of the Arc-Darker theme](http://i.imgur.com/NC6dqyl.png)
-
-##### SolArc-Dark
-
-![A screenshot of the Arc-Dark theme](http://i.imgur.com/5AGlCnA.png)
+### SolArc-Dark
+![A screenshot of the Arc-Dark theme](https://github.com/apheleia/solarc-theme/blob/master/images/preview-dark.png?raw=true)
 
 
-### Requirements
-
+## Requirements
 * Gnome/GTK 3.14, 3.16, 3.18 or 3.20
 * The `gnome-themes-standard` package
 * The murrine engine. This has different names depending on your distro.
@@ -42,15 +39,12 @@ Derivatives of these distributions should work, as well.
 
 If your distribution isn't listed, please check the requirements yourself.
 
-### Installation
-
+## Installation
 **Important:** Remove all older versions of the theme from your system before you proceed any further.
 
     sudo rm -rf /usr/share/themes/{SolArc,SolArc-Darker,SolArc-Dark}
     rm -rf ~/.local/share/themes/{SolArc,SolArc-Darker,SolArc-Dark}
     rm -rf ~/.themes/{SolArc,SolArc-Darker,SolArc-Dark}
-
-#### Manual Installation
 
 To build the theme you'll need
 * `autoconf`
@@ -104,8 +98,10 @@ from the same directory as this README resides in, or
 
     sudo rm -rf /usr/share/themes/{SolArc,SolArc-Darker,SolArc-Dark}
 
-### Troubleshooting
+## Contributing
+Every contribution is very welcome! Please create an issue and/or a pull request.
 
+## Troubleshooting
 If you have Ubuntu with a newer GTK/Gnome version than the one included by default (i.e Ubuntu 14.04 with GTK 3.14 or Ubuntu 15.04 with GTK 3.16, etc.) the prebuilt packages won't work properly and you have to install the theme manually as described above.
 This is also true for other distros with a different GTK/Gnome version than the one included by default
 
@@ -115,13 +111,12 @@ If you get artifacts like black or invisible backgrounds under Unity, disable ov
 
     gsettings set com.canonical.desktop.interface scrollbar-mode normal
 
-
-### Bug reporting
+## Bug reporting
 If you find a bug, please report it at https://github.com/apheleia/solarc-theme/issues
 
-### License
+## License
 SolArc is available under the terms of the GPL-3.0. See `COPYING` for details.
 
-### Full Preview
-![A full screenshot of the SolArc theme](http://i.imgur.com/tD1OBQ3.png)
-<sub>Screenshot Details: Icons: [SolArc](https://github.com/horst3180/arc-icon-theme) | Launcher Icons based on [White Pixel Icons](http://darkdawg.deviantart.com/art/White-Pixel-Icons-252310560) | [Wallpaper](https://pixabay.com/photo-869593/) | Font: Futura Bk bt</sub>
+## Full Preview
+![A full screenshot of the SolArc theme](https://github.com/apheleia/solarc-theme/blob/master/images/preview-complete.png?raw=true)
+<sub>Screenshot Details: Icons: [Arc Icon Theme](https://github.com/horst3180/arc-icon-theme) | Wallpaper: [Jason Levesque](http://stuntkid.com/) | Font: [DejaVu Sans](http://dejavu-fonts.org/wiki/Main_Page)</sub>
