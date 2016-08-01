@@ -85,7 +85,7 @@ install_theme() {
   rm -rf $tempdir && mkdir $tempdir && cd $tempdir
 
   # Get the sources && Remove current installation only if download and unpack are successful
-  wget $download_url && tar xf master.tar.gz && rm -rf $lightdir $darkerdir $darkdir && cd "$theme_name"-master 
+  wget $download_url && tar xf master.tar.gz && rm -rf $lightdir $darkerdir $darkdir && cd "$theme_name"-master
 
   # Build and install
   ./autogen.sh --prefix=/usr
@@ -138,7 +138,7 @@ check_directories $lightdir $darkerdir $darkdir
 echo
 read -r -p "Do you want to continue installation? [y/N] " response
 case $response in
-  [yY][eE][sS]|[yY]) 
+  [yY][eE][sS]|[yY])
     install_theme
     ;;
   *)

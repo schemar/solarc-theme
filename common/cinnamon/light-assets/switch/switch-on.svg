@@ -63,11 +63,11 @@
       <stop
          id="stop3940"
          offset="0"
-         style="stop-color:#ffffff;stop-opacity:0;" />
+         style="stop-color:#fdf6e3;stop-opacity:0;" />
       <stop
          id="stop3942"
          offset="1"
-         style="stop-color:#ffffff;stop-opacity:0.54901963;" />
+         style="stop-color:#fdf6e3;stop-opacity:0.54901963;" />
     </linearGradient>
     <linearGradient
        id="linearGradient6523">
@@ -85,16 +85,16 @@
       <stop
          id="stop3940-4"
          offset="0"
-         style="stop-color:#bebebe;stop-opacity:1;" />
+         style="stop-color:#657b83;stop-opacity:1;" />
       <stop
          id="stop3942-8"
          offset="1"
-         style="stop-color:#ffffff;stop-opacity:1;" />
+         style="stop-color:#fdf6e3;stop-opacity:1;" />
     </linearGradient>
   </defs>
   <sodipodi:namedview
      id="base"
-     pagecolor="#ffffff"
+     pagecolor="#fdf6e3"
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
@@ -175,7 +175,7 @@
                x="0"
                y="1029.3622" />
             <rect
-               style="fill:#5294e2;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               style="fill:#268bd2;fill-opacity:1;fill-rule:nonzero;stroke:none"
                id="rect2987-0-8"
                width="50"
                height="20"
@@ -184,7 +184,7 @@
                ry="11"
                rx="11" />
             <circle
-               style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               style="fill:#fdf6e3;fill-opacity:1;fill-rule:nonzero;stroke:none"
                id="path3759-0"
                cx="41"
                cy="1041.3622"
@@ -204,7 +204,7 @@
            height="1.9999826"
            width="5"
            id="rect3977-39-2"
-           style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none" />
+           style="display:inline;opacity:1;fill:#fdf6e3;fill-opacity:1;stroke:none" />
         <rect
            transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
            ry="0"
@@ -213,7 +213,7 @@
            height="7.9999828"
            width="2"
            id="rect3979-7-0"
-           style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none" />
+           style="display:inline;opacity:1;fill:#fdf6e3;fill-opacity:1;stroke:none" />
       </g>
     </g>
   </g>

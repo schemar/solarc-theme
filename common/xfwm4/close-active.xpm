@@ -3,7 +3,7 @@ static char * close_active_xpm[] = {
 "28 28 39 1",
 " 	c None",
 ".	c #EEEFF1",
-"+	c #E7E8EB",
+"+	c #eee8d5",
 "@	c #E8DCDF",
 "#	c #EDA2A6",
 "$	c #F1797F",

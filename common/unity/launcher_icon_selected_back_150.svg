@@ -26,7 +26,7 @@
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     pagecolor="#ffffff"
+     pagecolor="#fdf6e3"
      bordercolor="#666666"
      borderopacity="1"
      objecttolerance="10"
@@ -66,7 +66,7 @@
     </clipPath>
   </defs>
   <rect
-     style="fill:#5294e2;fill-opacity:1;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill:#268bd2;fill-opacity:1;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
      id="rect2995"
      width="148"
      height="147"

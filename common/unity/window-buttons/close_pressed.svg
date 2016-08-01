@@ -32,22 +32,22 @@
     <linearGradient
        id="linearGradient4882">
       <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
+         style="stop-color:#fdf6e3;stop-opacity:1;"
          offset="0"
          id="stop4884" />
       <stop
-         style="stop-color:#ffffff;stop-opacity:0;"
+         style="stop-color:#fdf6e3;stop-opacity:0;"
          offset="1"
          id="stop4886" />
     </linearGradient>
     <linearGradient
        id="linearGradient3784-6">
       <stop
-         style="stop-color:#ffffff;stop-opacity:0.21568628;"
+         style="stop-color:#fdf6e3;stop-opacity:0.21568628;"
          offset="0"
          id="stop3786-4" />
       <stop
-         style="stop-color:#ffffff;stop-opacity:0;"
+         style="stop-color:#fdf6e3;stop-opacity:0;"
          offset="1"
          id="stop3788-6" />
     </linearGradient>
@@ -161,51 +161,51 @@
         <g
            id="g4778-3-6"
            transform="translate(1323,246.86719)"
-           style="fill:#ffffff;fill-opacity:1">
+           style="fill:#fdf6e3;fill-opacity:1">
           <g
-             style="display:inline;fill:#ffffff;fill-opacity:1"
+             style="display:inline;fill:#fdf6e3;fill-opacity:1"
              id="layer9-9-6-0"
              transform="translate(-60,-518)" />
           <g
              id="layer10-2-3-6"
              transform="translate(-60,-518)"
-             style="fill:#ffffff;fill-opacity:1" />
+             style="fill:#fdf6e3;fill-opacity:1" />
           <g
              id="layer11-16-2-2"
              transform="translate(-60,-518)"
-             style="fill:#ffffff;fill-opacity:1" />
+             style="fill:#fdf6e3;fill-opacity:1" />
           <g
              transform="matrix(0.75,0,0,0.75,2,2.0546875)"
              id="g2996-7-0"
-             style="fill:#ffffff;fill-opacity:1">
+             style="fill:#fdf6e3;fill-opacity:1">
             <g
                transform="translate(-60,-518)"
                id="layer12-4-6-3"
-               style="fill:#ffffff;fill-opacity:1">
+               style="fill:#fdf6e3;fill-opacity:1">
               <g
                  transform="translate(19,-242)"
                  id="layer4-4-1-4-1"
-                 style="display:inline;fill:#ffffff;fill-opacity:1">
+                 style="display:inline;fill:#fdf6e3;fill-opacity:1">
                 <path
                    inkscape:connector-curvature="0"
                    d="m 45.001573,764.10442 1,0 c 0.01037,-1.2e-4 0.02079,-4.6e-4 0.03125,0 0.254951,0.0112 0.50987,0.12858 0.6875,0.3125 l 2.28125,2.28125 2.3125,-2.28125 c 0.265625,-0.2305 0.446672,-0.3055 0.6875,-0.3125 l 1,0 0,1 c 0,0.28647 -0.03434,0.55065 -0.25,0.75 l -2.28125,2.28125 2.25,2.25 c 0.188188,0.18817 0.281242,0.45345 0.28125,0.71875 l 0,1 -1,0 c -0.265301,-10e-6 -0.530586,-0.0931 -0.71875,-0.28125 l -2.28125,-2.28125 -2.28125,2.28125 c -0.188164,0.18819 -0.45346,0.28125 -0.71875,0.28125 l -1,0 0,-1 c -3e-6,-0.26529 0.09306,-0.53058 0.28125,-0.71875 l 2.28125,-2.25 -2.28125,-2.28125 c -0.210742,-0.19463 -0.30316,-0.46925 -0.28125,-0.75 l 0,-1 z"
                    id="path10839-9-8-7"
-                   style="color:#bebebe;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:'Andale Mono';-inkscape-font-specification:'Andale Mono';text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.78124988;marker:none;enable-background:new" />
+                   style="color:#657b83;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:'Andale Mono';-inkscape-font-specification:'Andale Mono';text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#fdf6e3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.78124988;marker:none;enable-background:new" />
               </g>
             </g>
           </g>
           <g
              id="layer13-2-0-2"
              transform="translate(-60,-518)"
-             style="fill:#ffffff;fill-opacity:1" />
+             style="fill:#fdf6e3;fill-opacity:1" />
           <g
              id="layer14-4-4-0"
              transform="translate(-60,-518)"
-             style="fill:#ffffff;fill-opacity:1" />
+             style="fill:#fdf6e3;fill-opacity:1" />
           <g
              id="layer15-7-5-0"
              transform="translate(-60,-518)"
-             style="fill:#ffffff;fill-opacity:1" />
+             style="fill:#fdf6e3;fill-opacity:1" />
         </g>
       </g>
       <rect

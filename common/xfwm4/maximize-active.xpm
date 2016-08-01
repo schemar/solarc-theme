@@ -3,7 +3,7 @@ static char * maximize_active_xpm[] = {
 "28 28 13 1",
 " 	c None",
 ".	c #EEEFF1",
-"+	c #E7E8EB",
+"+	c #eee8d5",
 "@	c #E5E6E9",
 "#	c #ACAFB7",
 "$	c #90949E",

@@ -3,7 +3,7 @@ static char * title_1_active_xpm[] = {
 "5 28 3 1",
 " 	c None",
 ".	c #EEEFF1",
-"+	c #E7E8EB",
+"+	c #eee8d5",
 ".....",
 "+++++",
 "+++++",

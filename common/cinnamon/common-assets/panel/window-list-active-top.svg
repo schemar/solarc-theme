@@ -24,7 +24,7 @@
      stroke="#ef2929"
      fill="#f57900"
      id="base"
-     pagecolor="#ffffff"
+     pagecolor="#fdf6e3"
      bordercolor="#808080"
      borderopacity="1"
      inkscape:pageopacity="0"
@@ -132,7 +132,7 @@
      id="layer1"
      transform="translate(0,-296)">
     <rect
-       style="opacity:1;fill:#5294e2;fill-opacity:1;stroke:none"
+       style="opacity:1;fill:#268bd2;fill-opacity:1;stroke:none"
        id="rect4270-9"
        width="24"
        height="2"

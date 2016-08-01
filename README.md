@@ -1,18 +1,18 @@
-# Arc Theme
+# SolArc Theme
 
-Arc is a flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell which supports GTK 3 and GTK 2 based desktop environments like Gnome, Unity, Budgie, Pantheon, XFCE, Mate, etc.
+SolArc is a flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell which supports GTK 3 and GTK 2 based desktop environments like Gnome, Unity, Budgie, Pantheon, XFCE, Mate, etc.
 
-###Arc is available in three variants 
+### SolArc is available in three variants
 
-#####Arc
+##### SolArc
 
 ![A screenshot of the Arc theme](http://i.imgur.com/Ph5ObOa.png)
 
-#####Arc-Darker
+##### SolArc-Darker
 
 ![A screenshot of the Arc-Darker theme](http://i.imgur.com/NC6dqyl.png)
 
-#####Arc-Dark
+##### SolArc-Dark
 
 ![A screenshot of the Arc-Dark theme](http://i.imgur.com/5AGlCnA.png)
 
@@ -46,33 +46,13 @@ If your distribution isn't listed, please check the requirements yourself.
 
 **Important:** Remove all older versions of the theme from your system before you proceed any further.
 
-    sudo rm -rf /usr/share/themes/{Arc,Arc-Darker,Arc-Dark}
-    rm -rf ~/.local/share/themes/{Arc,Arc-Darker,Arc-Dark}
-    rm -rf ~/.themes/{Arc,Arc-Darker,Arc-Dark}
-
-#### Packages
-
-Prebuilt packages for Ubuntu, Debian, Fedora and openSUSE are available at  
-http://software.opensuse.org/download.html?project=home%3AHorst3180&package=arc-theme  
-
-A non-transparent version of the theme is available here  
-http://software.opensuse.org/download.html?project=home%3AHorst3180&package=arc-theme-solid  
-
-**Note:** elementary OS Freya users can install the package for Ubuntu 15.04
-
---
-
-Arch Linux users can install the theme from the AUR
-
-**Official Releases**: https://aur.archlinux.org/packages/gtk-theme-arc/  
-
-**Development Releases**: https://aur.archlinux.org/packages/gtk-theme-arc-git/  
-
-**Note:** If you're having trouble with the AUR packages please email the package maintainer at zach@zach-adams.com before creating an issue.
+    sudo rm -rf /usr/share/themes/{SolArc,SolArc-Darker,SolArc-Dark}
+    rm -rf ~/.local/share/themes/{SolArc,SolArc-Darker,SolArc-Dark}
+    rm -rf ~/.themes/{SolArc,SolArc-Darker,SolArc-Dark}
 
 #### Manual Installation
 
-To build the theme you'll need 
+To build the theme you'll need
 * `autoconf`
 * `automake`
 * `pkg-config` or `pkgconfig` if you use Fedora
@@ -87,7 +67,7 @@ Install the theme with the following commands
 
 If you want to install the latest version from git, clone the repository with
 
-    git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
+    git clone https://github.com/apheleia/solarc-theme --depth 1 && cd solarc-theme
 
 **2. Build and install the theme**
 
@@ -97,9 +77,9 @@ If you want to install the latest version from git, clone the repository with
 Other options to pass to autogen.sh are
 
     --disable-transparency     disable transparency in the GTK3 theme
-    --disable-light            disable Arc Light support
-    --disable-darker           disable Arc Darker support
-    --disable-dark             disable Arc Dark support
+    --disable-light            disable SolArc Light support
+    --disable-darker           disable SolArc Darker support
+    --disable-dark             disable SolArc Dark support
     --disable-cinnamon         disable Cinnamon support
     --disable-gnome-shell      disable GNOME Shell support
     --disable-gtk2             disable GTK2 support
@@ -112,7 +92,7 @@ Other options to pass to autogen.sh are
                                Note: Normally the correct version is detected automatically and this
                                option should not be needed.
 
-After the installation is complete you can activate the theme with `gnome-tweak-tool` or a similar program by selecting `Arc`, `Arc-Darker` or `Arc-Dark` as Window/GTK+ theme and `Arc` or `Arc-Dark` as Gnome-Shell and Xfce-Notify theme.
+After the installation is complete you can activate the theme with `gnome-tweak-tool` or a similar program by selecting `SolArc`, `SolArc-Darker` or `SolArc-Dark` as Window/GTK+ theme and `SolArc` or `SolArc-Dark` as Gnome-Shell and Xfce-Notify theme.
 
 **Uninstall the theme**
 
@@ -122,25 +102,7 @@ Run
 
 from the same directory as this README resides in, or
 
-    sudo rm -rf /usr/share/themes/{Arc,Arc-Darker,Arc-Dark}
-
-### Extras
-
-#### Arc Firefox theme
-A theme for Firefox is available at https://github.com/horst3180/arc-firefox-theme
-
-#### Arc icon theme
-The Arc icon theme is available at https://github.com/horst3180/arc-icon-theme
-
-#### Chrome/Chromium theme
-To install the Chrome/Chromium theme go to the `extra/Chrome` folder and drag and drop the arc-theme.crx or arc-dark-theme.crx file into the Chrome/Chromium window. The source of the Chrome themes is located in the source "Chrome/arc-theme" folder.
-
-#### Plank theme
-To install the Plank theme, copy the `extra/Arc-Plank` folder to `~/.local/share/plank/themes` or to `/usr/share/plank/themes` for system-wide use.
-Now open the Plank preferences window by executing `plank --preferences` from a terminal and select `Arc-Plank` as the theme.
-
-#### Arc-Dark for Ubuntu Software Center
-The Arc Dark theme for the Ubuntu Software Center by [mervick](https://github.com/mervick) can be installed from [here](https://github.com/mervick/arc-dark-software-center). It solves readability issues with Arc Dark and the Ubuntu Software Center.
+    sudo rm -rf /usr/share/themes/{SolArc,SolArc-Darker,SolArc-Dark}
 
 ### Troubleshooting
 
@@ -155,11 +117,11 @@ If you get artifacts like black or invisible backgrounds under Unity, disable ov
 
 
 ### Bug reporting
-If you find a bug, please report it at https://github.com/horst3180/arc-theme/issues
+If you find a bug, please report it at https://github.com/apheleia/solarc-theme/issues
 
 ### License
-Arc is available under the terms the GPL-3.0. See `COPYING` for details.
+SolArc is available under the terms of the GPL-3.0. See `COPYING` for details.
 
 ### Full Preview
-![A full screenshot of the Arc theme](http://i.imgur.com/tD1OBQ3.png)
-<sub>Screenshot Details: Icons: [Arc](https://github.com/horst3180/arc-icon-theme) | Launcher Icons based on [White Pixel Icons](http://darkdawg.deviantart.com/art/White-Pixel-Icons-252310560) | [Wallpaper](https://pixabay.com/photo-869593/) | Font: Futura Bk bt</sub>
+![A full screenshot of the SolArc theme](http://i.imgur.com/tD1OBQ3.png)
+<sub>Screenshot Details: Icons: [SolArc](https://github.com/horst3180/arc-icon-theme) | Launcher Icons based on [White Pixel Icons](http://darkdawg.deviantart.com/art/White-Pixel-Icons-252310560) | [Wallpaper](https://pixabay.com/photo-869593/) | Font: Futura Bk bt</sub>
