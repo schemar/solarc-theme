@@ -5,6 +5,8 @@ SolArc is a fork of the Arc theme: https://github.com/horst3180/arc-theme
 
 Colours are based on the Solarized colour scheme by [Ethan Schoonover](https://github.com/altercation): https://github.com/altercation/solarized
 
+Most of the work is done inside [solarize.sh](https://github.com/apheleia/solarc-theme/blob/master/solarize.sh), which replaces various Arc colours with matching Solarized colours.
+
 ## SolArc is available in three variants
 ### SolArc
 ![A screenshot of the Arc theme](https://github.com/apheleia/solarc-theme/blob/master/images/preview-light.png?raw=true)
