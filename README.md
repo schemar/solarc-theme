@@ -43,6 +43,10 @@ Derivatives of these distributions should work, as well.
 If your distribution isn't listed, please check the requirements yourself.
 
 ## Installation
+### Arch Linux
+You can install the AUR package: [gtk-theme-solarc-git](https://aur.archlinux.org/packages/gtk-theme-solarc-git/)
+
+### Manual Installation
 **Important:** Remove all older versions of the theme from your system before you proceed any further.
 
     sudo rm -rf /usr/share/themes/{SolArc,SolArc-Darker,SolArc-Dark}
