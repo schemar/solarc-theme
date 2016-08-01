@@ -1,7 +1,8 @@
 # SolArc Theme
 SolArc is a flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell which supports GTK 3 and GTK 2 based desktop environments like Gnome, Unity, Budgie, Pantheon, XFCE, Mate, etc.
 
-SolArc is based on the Arc theme: https://github.com/horst3180/arc-theme
+SolArc is a fork of the Arc theme: https://github.com/horst3180/arc-theme
+
 Colours are based on the Solarized colour scheme by [Ethan Schoonover](https://github.com/altercation): https://github.com/altercation/solarized
 
 ## SolArc is available in three variants
