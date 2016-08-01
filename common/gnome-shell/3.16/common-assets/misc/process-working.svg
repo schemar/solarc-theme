@@ -36,38 +36,38 @@
       <stop
          id="stop8233-28-5-27-1"
          offset="0"
-         style="stop-color:#ffffff;stop-opacity:0" />
+         style="stop-color:#fdf6e3;stop-opacity:0" />
       <stop
-         style="stop-color:#ffffff;stop-opacity:0.15428571"
+         style="stop-color:#fdf6e3;stop-opacity:0.15428571"
          offset="0.31861392"
          id="stop8235-7-3-94-3" />
       <stop
          id="stop8237-7-8-20-2"
          offset="0.54270232"
-         style="stop-color:#ffffff;stop-opacity:0.33714285" />
+         style="stop-color:#fdf6e3;stop-opacity:0.33714285" />
       <stop
          id="stop8239-2-9-1-9"
          offset="1"
-         style="stop-color:#ffffff;stop-opacity:1" />
+         style="stop-color:#fdf6e3;stop-opacity:1" />
     </linearGradient>
     <linearGradient
        id="linearGradient5767-6">
       <stop
          id="stop5769-0"
          offset="0"
-         style="stop-color:#bebebe;stop-opacity:0" />
+         style="stop-color:#657b83;stop-opacity:0" />
       <stop
-         style="stop-color:#ffffff;stop-opacity:0"
+         style="stop-color:#fdf6e3;stop-opacity:0"
          offset="0.31861392"
          id="stop5771-1" />
       <stop
          id="stop5773-7"
          offset="0.75051737"
-         style="stop-color:#ffffff;stop-opacity:0.42857143" />
+         style="stop-color:#fdf6e3;stop-opacity:0.42857143" />
       <stop
          id="stop5775-8"
          offset="1"
-         style="stop-color:#ffffff;stop-opacity:1" />
+         style="stop-color:#fdf6e3;stop-opacity:1" />
     </linearGradient>
     <radialGradient
        inkscape:collect="always"

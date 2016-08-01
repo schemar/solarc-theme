@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <metacity_theme>
 <info>
-	<name>Arc</name>
+	<name>SolArc</name>
 	<author>horst3180</author>
 	<copyright>horst3180</copyright>
 	<date>2015</date>
-	<description>Arc Metacity theme</description>
+	<description>SolArc Metacity theme</description>
 </info>
 
 <!-- meaningfull constants -->
@@ -13,8 +13,8 @@
 <constant name="C_title_focused" value="gtk:custom(wm_title,#70788d)" />
 <constant name="C_title_unfocused" value="gtk:custom(wm_unfocused_title,#979dac)" />
 
-<constant name="C_wm_bg_focused" value="gtk:custom(wm_bg,#e7e8eb)" />
-<constant name="C_wm_bg_unfocused" value="gtk:custom(wm_bg,#e7e8eb)" />
+<constant name="C_wm_bg_focused" value="gtk:custom(wm_bg,#eee8d5)" />
+<constant name="C_wm_bg_unfocused" value="gtk:custom(wm_bg,#eee8d5)" />
 
 <constant name="C_wm_highlight" value="gtk:custom(wm_highlight,#eeeff1)" />
 
@@ -29,14 +29,14 @@
 
 <!-- minimize, maximize -->
 <constant name="C_button_bg_hover" value="gtk:custom(wm_button_hover_bg,#fdfdfd)" />
-<constant name="C_button_bg_active" value="gtk:custom(wm_button_active_bg,#5294E2)" />
+<constant name="C_button_bg_active" value="gtk:custom(wm_button_active_bg,#268bd2)" />
 
 <constant name="C_button_border_hover" value="gtk:custom(wm_button_hover_border,#D1D3DA)" />
 
 <constant name="C_icon_bg_focused" value="gtk:custom(wm_icon_bg,#90949E)" />
 <constant name="C_icon_bg_unfocused" value="gtk:custom(wm_icon_unfocused_bg,#B6B8C0)" />
 <constant name="C_icon_bg_hover" value="gtk:custom(wm_icon_hover_bg,#7A7F8B)" />
-<constant name="C_icon_bg_active" value="gtk:custom(wm_icon_active_bg,#ffffff)" />
+<constant name="C_icon_bg_active" value="gtk:custom(wm_icon_active_bg,#fdf6e3)" />
 
 <!-- geometries -->
 
@@ -61,7 +61,7 @@
 	<distance name="right_width" value="0" />
 	<distance name="left_titlebar_edge" value="0"/>
 	<distance name="right_titlebar_edge" value="0"/>
-	<distance name="title_vertical_pad" value="2"/> <!-- 
+	<distance name="title_vertical_pad" value="2"/> <!--
 							This needs to be 1 less then the
 							title_vertical_pad on normal state
 							or you'll have bigger buttons		-->
