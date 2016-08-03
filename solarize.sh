@@ -49,6 +49,8 @@ A_ASSET_VARIOUS_DARK2="2d303b"
 A_ASSET_VARIOUS_DARK3="2d323d"
 A_GNOME_PANEL_BG="252a35"
 A_GNOME_PANEL_BORDER="0f1116"
+A_GTK2_TOOLBAR="70788d"
+A_GTK2_TOOLBAR_DARK="afb8c5"
 
 # Solarized colors
 ## Common
@@ -71,8 +73,8 @@ S_BASE2="eee8d5"
 S_BASE3="fdf6e3"
 
 FILETYPES=('scss' 'svg' 'xpm' 'xml' 'rc')
-ARC_COLORS=(      "$A_BASE"   "$A_TEXT"   "$A_BG"     "$A_FG"     "$A_SELECTED_FG" "$A_SELECTED_BG" "$A_WARNING" "$A_ERROR" "$A_SUCCESS" "$A_DESTRUCTIVE" "$A_SUGGESTED" "$A_DROP_TARGET" "$A_WM_BUTTON_CLOSE_BG" "$A_WM_BUTTON_CLOSE_HOVER_BG" "$A_WM_BUTTON_CLOSE_ACTIVE_BG" "$A_WM_ICON_CLOSE_BG" "$A_WM_BUTTON_HOVER_BG" "$A_WM_BUTTON_ACTIVE_BG" "$A_WM_BUTTON_HOVER_BORDER" "$A_WM_ICON_BG" "$A_WM_ICON_UNFOCUSED_BG" "$A_WM_ICON_HOVER_BG" "$A_WM_ICON_ACTIVE_BG" "$A_WINDOW_BG" "$A_DARK_SIDEBAR_FG" "$A_ENTRY_BORDER" "$A_BLUE" "$A_WHITE" "$A_GREY"  "$A_DARK"   "$A_DARKEST" "$A_DARKEST2" "$A_DARK_BUTTON" "$A_LIGHT_BUTTON" "$A_OTHER_LIGHT_BUTTON" "$A_MODAL"  "$A_ASSET_DARK" "$A_ASSET_DARK2" "$A_ASSET_GREY" "$A_ASSET_BORDER" "$A_ASSET_LIGHTER_BG" "$A_ASSET_VARIOUS_DARK1" "$A_ASSET_VARIOUS_DARK2" "$A_ASSET_VARIOUS_DARK3" "$A_GNOME_PANEL_BG" "$A_GNOME_PANEL_BORDER")
-SOLARIZED_COLORS=("$S_BASE02" "$S_BASE00" "$S_BASE03" "$S_BASE00" "$S_BASE3"       "$S_BLUE"        "$S_ORANGE"  "$S_RED"   "$S_GREEN"   "$S_RED"          "$S_CYAN"     "$S_YELLOW"      "$S_RED"                "$S_ORANGE"                   "$S_RED"                       "$S_BASE03"           "$S_BASE00"             "$S_BLUE"                "$S_BASE03"                 "$S_BASE1"      "$S_BASE00"               "$S_BASE1"            "$S_BASE3"             "$S_BASE02"    "$S_BASE00"          "$S_BASE00"       "$S_BLUE" "$S_BASE3" "$S_BASE2" "$S_BASE03" "$S_BASE03"  "$S_BASE03"   "$S_BASE03"      "$S_BASE02"       "$S_BASE02"             "$S_BASE03" "$S_BASE03"     "$S_BASE02"      "$S_BASE00"     "$S_BASE00"       "$S_BASE02"           "$S_BASE00"              "$S_BASE03"              "$S_BASE03"              "$S_BASE03"         "$S_BASE03"            )
+ARC_COLORS=(      "$A_BASE"   "$A_TEXT"   "$A_BG"     "$A_FG"     "$A_SELECTED_FG" "$A_SELECTED_BG" "$A_WARNING" "$A_ERROR" "$A_SUCCESS" "$A_DESTRUCTIVE" "$A_SUGGESTED" "$A_DROP_TARGET" "$A_WM_BUTTON_CLOSE_BG" "$A_WM_BUTTON_CLOSE_HOVER_BG" "$A_WM_BUTTON_CLOSE_ACTIVE_BG" "$A_WM_ICON_CLOSE_BG" "$A_WM_BUTTON_HOVER_BG" "$A_WM_BUTTON_ACTIVE_BG" "$A_WM_BUTTON_HOVER_BORDER" "$A_WM_ICON_BG" "$A_WM_ICON_UNFOCUSED_BG" "$A_WM_ICON_HOVER_BG" "$A_WM_ICON_ACTIVE_BG" "$A_WINDOW_BG" "$A_DARK_SIDEBAR_FG" "$A_ENTRY_BORDER" "$A_BLUE" "$A_WHITE" "$A_GREY"  "$A_DARK"   "$A_DARKEST" "$A_DARKEST2" "$A_DARK_BUTTON" "$A_LIGHT_BUTTON" "$A_OTHER_LIGHT_BUTTON" "$A_MODAL"  "$A_ASSET_DARK" "$A_ASSET_DARK2" "$A_ASSET_GREY" "$A_ASSET_BORDER" "$A_ASSET_LIGHTER_BG" "$A_ASSET_VARIOUS_DARK1" "$A_ASSET_VARIOUS_DARK2" "$A_ASSET_VARIOUS_DARK3" "$A_GNOME_PANEL_BG" "$A_GNOME_PANEL_BORDER" "$A_GTK2_TOOLBAR" "$A_GTK2_TOOLBAR_DARK")
+SOLARIZED_COLORS=("$S_BASE02" "$S_BASE00" "$S_BASE03" "$S_BASE00" "$S_BASE3"       "$S_BLUE"        "$S_ORANGE"  "$S_RED"   "$S_GREEN"   "$S_RED"          "$S_CYAN"     "$S_YELLOW"      "$S_RED"                "$S_ORANGE"                   "$S_RED"                       "$S_BASE03"           "$S_BASE00"             "$S_BLUE"                "$S_BASE03"                 "$S_BASE1"      "$S_BASE00"               "$S_BASE1"            "$S_BASE3"             "$S_BASE02"    "$S_BASE00"          "$S_BASE00"       "$S_BLUE" "$S_BASE3" "$S_BASE2" "$S_BASE03" "$S_BASE03"  "$S_BASE03"   "$S_BASE03"      "$S_BASE02"       "$S_BASE02"             "$S_BASE03" "$S_BASE03"     "$S_BASE02"      "$S_BASE00"     "$S_BASE00"       "$S_BASE02"           "$S_BASE00"              "$S_BASE03"              "$S_BASE03"              "$S_BASE03"         "$S_BASE03"             "$S_BASE0"        "$S_BASE00"           )
 
 CWD=`pwd`
 
@@ -101,6 +103,7 @@ do
     rm -f common/${folder}/assets/*.png
 done
 rm -f common/gtk-2.0/assets-dark/*.png
+rm -f common/gtk-2.0/menubar-toolbar/*.png
 
 echo "## Writing new assets"
 for folder in "${ASSET_FOLDERS[@]}"
@@ -115,6 +118,22 @@ echo "# Writing assets for gtk-2.0 dark"
 cd common/gtk-2.0
 ./render-dark-assets.sh > /dev/null
 cd "${CWD}"
+
+echo "# Copying assets for gtk-2.0 menubar and toolbar"
+cp common/gtk-2.0/assets-dark/button.png common/gtk-2.0/menubar-toolbar/button.png
+cp common/gtk-2.0/assets-dark/button-hover.png common/gtk-2.0/menubar-toolbar/button-hover.png
+cp common/gtk-2.0/assets-dark/button-active.png common/gtk-2.0/menubar-toolbar/button-active.png
+cp common/gtk-2.0/assets-dark/button-insensitive.png common/gtk-2.0/menubar-toolbar/button-insensitive.png
+cp common/gtk-2.0/assets/entry-toolbar.png common/gtk-2.0/menubar-toolbar/entry-toolbar.png
+cp common/gtk-2.0/assets/entry-active-toolbar.png common/gtk-2.0/menubar-toolbar/entry-active-toolbar.png
+cp common/gtk-2.0/assets/entry-disabled-toolbar.png common/gtk-2.0/menubar-toolbar/entry-disabled-toolbar.png
+cp common/gtk-2.0/assets-dark/entry-toolbar.png common/gtk-2.0/menubar-toolbar/entry-toolbar-dark.png
+cp common/gtk-2.0/assets-dark/entry-active-toolbar.png common/gtk-2.0/menubar-toolbar/entry-active-toolbar-dark.png
+cp common/gtk-2.0/assets-dark/entry-disabled-toolbar.png common/gtk-2.0/menubar-toolbar/entry-disabled-toolbar-dark.png
+cp common/gtk-2.0/assets/menubar.png common/gtk-2.0/menubar-toolbar/menubar.png
+cp common/gtk-2.0/assets-dark/menubar.png common/gtk-2.0/menubar-toolbar/menubar-dark.png
+cp common/gtk-2.0/assets/menubar_button.png common/gtk-2.0/menubar-toolbar/menubar_button.png
+cp common/gtk-2.0/assets-dark/menubar_button.png common/gtk-2.0/menubar-toolbar/menubar_button-dark.png
 
 echo "### Regenerating css"
 gulp
