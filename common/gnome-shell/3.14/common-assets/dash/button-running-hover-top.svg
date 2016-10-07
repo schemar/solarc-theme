@@ -125,7 +125,7 @@
        id="selected_bg_color"
        osb:paint="solid">
       <stop
-         style="stop-color:#5294e2;stop-opacity:1;"
+         style="stop-color:#268bd2;stop-opacity:1;"
          offset="0"
          id="stop4147" />
     </linearGradient>
@@ -147,7 +147,7 @@
          rx="0"
          transform="scale(-1,-1)" />
       <rect
-         style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0.37254902;stroke:none"
+         style="display:inline;opacity:1;fill:#fdf6e3;fill-opacity:0.37254902;stroke:none"
          id="rect4147-9"
          width="4.9342208"
          height="1.233557"

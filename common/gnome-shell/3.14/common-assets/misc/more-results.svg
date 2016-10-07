@@ -23,7 +23,7 @@
        id="selected_fg_color"
        osb:paint="solid">
       <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
+         style="stop-color:#fdf6e3;stop-opacity:1;"
          offset="0"
          id="stop4150" />
     </linearGradient>
@@ -31,7 +31,7 @@
        id="selected_bg_color"
        osb:paint="solid">
       <stop
-         style="stop-color:#5294e2;stop-opacity:1;"
+         style="stop-color:#268bd2;stop-opacity:1;"
          offset="0"
          id="stop4147" />
     </linearGradient>
@@ -142,17 +142,17 @@
           </g>
         </g>
         <g
-           style="fill:#ffffff;fill-opacity:1"
+           style="fill:#fdf6e3;fill-opacity:1"
            transform="matrix(0.765075,0,0,0.765075,1.8805941,1.8794795)"
            id="g2996">
           <g
-             style="fill:#ffffff;fill-opacity:1"
+             style="fill:#fdf6e3;fill-opacity:1"
              transform="translate(-60,-518)"
              id="layer12">
             <g
                transform="translate(19,-242)"
                id="layer4-4-1"
-               style="display:inline;fill:#ffffff;fill-opacity:1" />
+               style="display:inline;fill:#fdf6e3;fill-opacity:1" />
           </g>
         </g>
       </g>

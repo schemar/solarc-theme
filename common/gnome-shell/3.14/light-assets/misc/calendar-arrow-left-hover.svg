@@ -44,7 +44,7 @@
      inkscape:object-nodes="false"
      inkscape:object-paths="false"
      objecttolerance="10"
-     pagecolor="#ffffff"
+     pagecolor="#fdf6e3"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      showborder="false"
@@ -98,7 +98,7 @@
        id="selected_bg_color"
        osb:paint="solid">
       <stop
-         style="stop-color:#5294e2;stop-opacity:1;"
+         style="stop-color:#268bd2;stop-opacity:1;"
          offset="0"
          id="stop4149" />
     </linearGradient>

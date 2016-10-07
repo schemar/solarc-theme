@@ -13,8 +13,8 @@
 <constant name="C_title_focused" value="#839496" />
 <constant name="C_title_unfocused" value="#979dac" />
 
-<constant name="C_wm_bg_focused" value="#e7e8eb" />
-<constant name="C_wm_bg_unfocused" value="#e7e8eb" />
+<constant name="C_wm_bg_focused" value="#eee8d5" />
+<constant name="C_wm_bg_unfocused" value="#eee8d5" />
 
 <constant name="C_wm_highlight" value="#eeeff1" />
 
@@ -29,14 +29,14 @@
 
 <!-- minimize, maximize -->
 <constant name="C_button_bg_hover" value="#fdfdfd" />
-<constant name="C_button_bg_active" value="#5294e2" />
+<constant name="C_button_bg_active" value="#268bd2" />
 
 <constant name="C_button_border_hover" value="#D1D3DA" />
 
 <constant name="C_icon_bg_focused" value="#90949E" />
 <constant name="C_icon_bg_unfocused" value="#B6B8C0" />
 <constant name="C_icon_bg_hover" value="#7A7F8B" />
-<constant name="C_icon_bg_active" value="#5294e2" />
+<constant name="C_icon_bg_active" value="#268bd2" />
 
 <!-- geometries -->
 
