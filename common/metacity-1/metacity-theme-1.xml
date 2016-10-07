@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <metacity_theme>
 <info>
-	<name>SolArc</name>
+	<name>Arc</name>
 	<author>horst3180</author>
 	<copyright>horst3180</copyright>
 	<date>2015</date>
-	<description>SolArc Metacity theme</description>
+	<description>Arc Metacity theme</description>
 </info>
 
 <!-- meaningfull constants -->
 
-<constant name="C_title_focused" value="#839496" />
+<constant name="C_title_focused" value="#70788d" />
 <constant name="C_title_unfocused" value="#979dac" />
 
-<constant name="C_wm_bg_focused" value="#eee8d5" />
-<constant name="C_wm_bg_unfocused" value="#eee8d5" />
+<constant name="C_wm_bg_focused" value="#e7e8eb" />
+<constant name="C_wm_bg_unfocused" value="#e7e8eb" />
 
 <constant name="C_wm_highlight" value="#eeeff1" />
 
@@ -29,28 +29,27 @@
 
 <!-- minimize, maximize -->
 <constant name="C_button_bg_hover" value="#fdfdfd" />
-<constant name="C_button_bg_active" value="#268bd2" />
+<constant name="C_button_bg_active" value="#5294e2" />
 
 <constant name="C_button_border_hover" value="#D1D3DA" />
 
 <constant name="C_icon_bg_focused" value="#90949E" />
 <constant name="C_icon_bg_unfocused" value="#B6B8C0" />
 <constant name="C_icon_bg_hover" value="#7A7F8B" />
-<constant name="C_icon_bg_active" value="#fdf6e3" />
+<constant name="C_icon_bg_active" value="#5294e2" />
 
 <!-- geometries -->
 
 <frame_geometry name="normal" title_scale="medium" rounded_top_left="1" rounded_top_right="1">
-	<distance name="left_width" value="0" />
-	<distance name="right_width" value="0" />
-	<distance name="bottom_height" value="0" />
+	<distance name="left_width" value="1" />
+	<distance name="right_width" value="1" />
+	<distance name="bottom_height" value="3" />
 	<distance name="left_titlebar_edge" value="2"/>
 	<distance name="right_titlebar_edge" value="2"/>
 	<distance name="title_vertical_pad" value="3"/>
 	<border name="title_border" left="10" right="10" top="3" bottom="3"/>
 	<border name="button_border" left="3" right="3" top="0" bottom="0"/>
 	<aspect_ratio name="button" value="1.0" />
-
 </frame_geometry>
 
 <frame_geometry name="normal_unfocused" title_scale="medium" rounded_top_left="1" rounded_top_right="1" parent="normal">
@@ -59,9 +58,10 @@
 <frame_geometry name="max" title_scale="medium" parent="normal" rounded_top_left="false" rounded_top_right="false">
 	<distance name="left_width" value="0" />
 	<distance name="right_width" value="0" />
+	<distance name="bottom_height" value="0" />
 	<distance name="left_titlebar_edge" value="0"/>
 	<distance name="right_titlebar_edge" value="0"/>
-	<distance name="title_vertical_pad" value="2"/> <!--
+	<distance name="title_vertical_pad" value="2"/> <!-- 
 							This needs to be 1 less then the
 							title_vertical_pad on normal state
 							or you'll have bigger buttons		-->

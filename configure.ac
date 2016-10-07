@@ -1,6 +1,6 @@
 AC_INIT(
     [arc-theme],
-    [20160605],
+    [20161005],
     [https://github.com/horst3180/Arc-theme/issues],
     [arc-theme],
     [https://github.com/horst3180/Arc-theme],
@@ -24,7 +24,7 @@ ARC_ENABLE([UNITY],         [unity],         [Unity],         [disable])
 ARC_ENABLE([XFWM],          [xfwm],          [XFWM],          [disable])
 ARC_ENABLE([TRANSPARENCY],  [transparency],  [transparency],  [disable])
 
-ARC_GNOME
+AS_IF([test "x$ENABLE_GNOME_SHELL$ENABLE_GTK3" != xnono], [ARC_GNOME])
 
 AC_CONFIG_FILES([
     common/Makefile

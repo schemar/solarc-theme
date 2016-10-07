@@ -7,9 +7,10 @@ terminal-window notebook {
 }
 
 //
-// GNOME Terminal
+// GNOME Terminal, MATE Terminal
 //
-terminal-window {
+terminal-window,
+.mate-terminal {
 
   notebook {
     > header.top {
@@ -35,7 +36,7 @@ terminal-window {
 }
 
 .nautilus-desktop.nautilus-canvas-item {
-  color: $selected_fg_color;
+  color: white;
   text-shadow: 1px 1px transparentize(black, 0.4);
 
   &:active { color: $fg_color; }
@@ -102,6 +103,21 @@ $disk_space_free: darken($bg_color, 3%);
 .nautilus-operations-button-needs-attention-multiple {
   animation: needs_attention_keyframes 3s ease-in-out;
   animation-iteration-count: 3;
+}
+
+// Batch renaming dialog
+.conflict-row.activatable {
+  &, &:active {
+    color: $error_fg_color;
+    background-color: $error_color;
+  }
+
+  &:hover { background-color: lighten($error_color, 10%); }
+
+  &:selected {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+  }
 }
 
 //
@@ -250,8 +266,27 @@ $disk_space_free: darken($bg_color, 3%);
 }
 
 //
+// Pluma
+//
+
+.pluma-window statusbar frame > border { border: none; }
+
+.pluma-window notebook > stack scrolledwindow { border-width: 0 0 1px 0; }
+
+#pluma-status-combo-button {
+  min-height: 0;
+  padding: 0;
+
+  border-top: none;
+  border-bottom: none;
+  border-radius: 0;
+}
+
+//
 // Gnome Builder
 //
+// TODO: Merge this with the upstream stylesheet
+
 .gb-search-entry-occurrences-tag { background: none; }
 
 workbench.csd > stack.titlebar:not(headerbar) {
@@ -286,6 +321,8 @@ pillbox {
   color: $selected_fg_color;
   background-color: $selected_bg_color;
   border-radius: 3px;
+
+  &:disabled label { color: transparentize($selected_fg_color, 0.5) }
 }
 
 docktabstrip {
@@ -332,6 +369,63 @@ dockoverlayedge {
   }
 }
 
+popover.messagepopover {
+  &.background { padding: 0; }
+
+  .popover-content-area { margin: 16px; }
+  .popover-action-area {
+    margin: 8px;
+
+    button:not(:first-child):not(:last-child) { margin: 0 4px; }
+  }
+}
+
+popover.popover-selector {
+  padding: 0;
+
+  list {
+    row { padding: 5px 0; }
+    row image { margin-left: 3px; margin-right: 10px; }
+  }
+}
+
+entry.search.preferences-search {
+  border: none;
+  border-right: 1px solid $borders_color;
+  border-bottom: 1px solid $borders_color;
+  border-radius: 0;
+}
+
+preferences stacksidebar.sidebar {
+  list { background-image: _solid($base_color); }
+
+  list separator { background-color: transparent; }
+}
+
+devhelppanel entry:focus,
+symboltreepanel entry:focus {
+  border-color: $borders_color
+}
+
+button.run-arrow-button {
+  min-width: 12px;
+}
+
+omnibar.linked > entry:not(:only-child) { border-style: solid; border-radius: 3px; margin-left: 1px; margin-right: 1px; }
+
+gstyleslidein {
+  #scale_box,
+  #strings_controls,
+  #palette_controls,
+  #components_controls {
+    button.toggle:checked { color: $fg_color; }
+  }
+}
+
+configurationview {
+  entry.flat { background: none; }
+  list { border-width: 0; }
+}
 
 //
 // Epiphany
@@ -416,12 +510,82 @@ button.documents-favorite:active:hover {
 }
 
 //
+// Gnome Flashback
+//
+#gf-bubble,
+#gf-osd-window,
+#gf-input-source-popup,
+#gf-candidate-popup {
+  &, &.solid {
+    color: lighten($osd_fg_color, 7%);
+    background-color: $osd_bg_color;
+    border: 1px solid darken($osd_bg_color, 8%);
+    border-radius: 2px;
+  }
+
+  levelbar {
+    block {
+      &.low, &.high, &.full {
+        background-color: $selected_bg_color;
+        border-color: $selected_bg_color;
+      }
+      &.empty { background-color: darken($osd_bg_color, 5%); }
+    }
+    trough { background: none; }
+  }
+
+  // FIXME still needs button styling
+}
+
+#gf-input-source {
+  min-height: 32px;
+  min-width: 40px;
+
+  &:selected {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+    border-radius: 2px;
+  }
+}
+
+gf-candidate-box {
+  label { padding: 3px; }
+
+  &:hover,
+  &:selected {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+    border-radius: 2px;
+  }
+}
+
+//
+// Mate OSD Window
+//
+MsdOsdWindow.background.osd {
+  border-radius: 2px;
+  border: 1px solid darken($osd_bg_color, 8%);
+
+  .progressbar {
+    background-color: $selected_bg_color;
+    border: none;
+    border-color: red;
+    border-radius: 5px;
+  }
+  .trough {
+    background-color: darken($osd_bg_color, 5%);
+    border: none;
+    border-radius: 5px;
+  }
+}
+
+//
 // Mate/Gnome Flashback Panel
 //
-.gnome-panel-menu-bar,
-.mate-panel-menu-bar {
+.mate-panel-menu-bar,
+panel-toplevel.background {
 
-  &, menubar { background-color: $panel_bg; }
+  &, menubar { background-color: opacify($panel_bg, 1); }
 
   menubar,
   #PanelApplet label,
@@ -479,7 +643,7 @@ button.documents-favorite:active:hover {
   }
 
   &:checked {
-    color: $selected_fg_color;
+    color: white;
     background-color: transparentize(black, 0.75);
     box-shadow: inset 0 -2px $selected_bg_color;
   }
@@ -499,6 +663,8 @@ button.documents-favorite:active:hover {
     color: $selected_fg_color;
     border: none;
     background-color: $selected_bg_color;
+
+    label, image { color: inherit; }
   }
 }
 
@@ -572,7 +738,7 @@ button.documents-favorite:active:hover {
     border: 1px solid rgba(0, 0, 0, 0.35);
     border-radius: 3px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background-image: linear-gradient(to bottom, white);
+    background-image: _solid(white);
     background-color: transparent;
 
   .title, .label {

@@ -20,7 +20,7 @@
      id="defs4795" />
   <sodipodi:namedview
      id="base"
-     pagecolor="#fdf6e3"
+     pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
@@ -71,7 +71,7 @@
          inkscape:connector-curvature="0"
          id="rect4749-48"
          d="m 45,1005.3622 c 1.108,0 2,0.892 2,2 l 0,42 c 0,1.108 -0.892,2 -2,2 l -45,0 0,-46 z"
-         style="display:inline;opacity:0.95;fill:#073642;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="display:inline;opacity:0.95;fill:#353945;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
   </g>
 </svg>
