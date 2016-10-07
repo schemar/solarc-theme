@@ -19,7 +19,7 @@ Most of the work is done inside [solarize.sh](https://github.com/apheleia/solarc
 
 
 ## Requirements
-* Gnome/GTK 3.14, 3.16, 3.18 or 3.20
+* Gnome/GTK3 3.14 - 3.22
 * The `gnome-themes-standard` package
 * The murrine engine. This has different names depending on your distro.
   * `gtk-engine-murrine` (Arch Linux)
@@ -31,11 +31,11 @@ Most of the work is done inside [solarize.sh](https://github.com/apheleia/solarc
 Main distributions that meet these requirements are
 
 * Arch Linux and Arch Linux based distros
-* Ubuntu 15.04, 15.10 and 16.04 (**Ubuntu 14.04 and 14.10 are not supported**)
-* elementary OS Freya
+* Ubuntu 15.04 or newer (**Ubuntu 14.04 and 14.10 are not supported**)
+* elementary OS Freya/Loki
 * Debian 8, Testing or Unstable
 * Gentoo
-* Fedora 21 - 24
+* Fedora 21 or newer
 * openSUSE 13.2, Leap 42.1 and Tumbleweed
 
 Derivatives of these distributions should work, as well.
