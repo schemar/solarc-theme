@@ -1,9 +1,9 @@
 AC_INIT(
-    [arc-theme],
-    [20161119],
-    [https://github.com/horst3180/Arc-theme/issues],
-    [arc-theme],
-    [https://github.com/horst3180/Arc-theme],
+    [solarc-theme],
+    [v1.0.0-beta.3],
+    [https://github.com/apheleia/solarc-theme/issues],
+    [solarc-theme],
+    [https://github.com/apheleia/solarc-theme],
     []
 )
 
