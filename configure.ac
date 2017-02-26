@@ -1,6 +1,6 @@
 AC_INIT(
     [solarc-theme],
-    [v1.0.0-beta.2],
+    [v1.0.0],
     [https://github.com/apheleia/solarc-theme/issues],
     [solarc-theme],
     [https://github.com/apheleia/solarc-theme],

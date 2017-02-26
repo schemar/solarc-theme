@@ -10,3 +10,4 @@ configure
 install-sh
 missing
 .idea/
+*.iml
