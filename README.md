@@ -21,7 +21,7 @@ Most of the work is done inside [solarize.sh](https://github.com/apheleia/solarc
 ## Requirements
 * Gnome/GTK3 3.14 - 3.22
 * The `gnome-themes-standard` package
-* The murrine engine. This has different names depending on the distro.
+* The murrine engine. This has different names depending on your distro.
   * `gtk-engine-murrine` (Arch Linux)
   * `gtk2-engines-murrine` (Debian, Ubuntu, elementary OS)
   * `gtk-murrine-engine` (Fedora)
@@ -64,13 +64,13 @@ If your distributions doesn't ship separate development packages you just need G
 
 Install the theme with the following commands
 
-#### 1. Get the source
+**1. Get the source**
 
-Clone the git repository with
+If you want to install the latest version from git, clone the repository with
 
     git clone https://github.com/apheleia/solarc-theme --depth 1 && cd solarc-theme
 
-#### 2. Build and install the theme
+**2. Build and install the theme**
 
     ./autogen.sh --prefix=/usr
     sudo make install
@@ -89,23 +89,19 @@ Other options to pass to autogen.sh are
     --disable-unity            disable Unity support
     --disable-xfwm             disable XFWM support
 
-    --with-gnome=<version>     build the theme for a specific GNOME version (3.14, 3.16, 3.18, 3.20, 3.22)
-                               Note 1: Normally the correct version is detected automatically and this
+    --with-gnome=<version>     build the theme for a specific Gnome version (3.14, 3.16, 3.18, 3.20)
+                               Note: Normally the correct version is detected automatically and this
                                option should not be needed.
-                               Note 2: For GNOME 3.24, use --with-gnome-version=3.22
-                               (this works for now, the build system will be improved in the future)
 
-After the installation is complete the theme can be activated with `gnome-tweak-tool` or a similar program by selecting `SolArc`, `SolArc-Darker` or `SolArc-Dark` as Window/GTK+ theme and `SolArc` or `SolArc-Dark` as GNOME Shell/Cinnamon theme.
+After the installation is complete you can activate the theme with `gnome-tweak-tool` or a similar program by selecting `SolArc`, `SolArc-Darker` or `SolArc-Dark` as Window/GTK+ theme and `SolArc` or `SolArc-Dark` as Gnome-Shell and Xfce-Notify theme.
 
-If the `--disable-transparency` option was used, the theme will be installed as `SolArc-solid`, `SolArc-Darker-solid` and `SolArc-Dark-solid`.
-
-## Uninstall
+**Uninstall the theme**
 
 Run
 
     sudo make uninstall
 
-from the cloned git repository, or
+from the same directory as this README resides in, or
 
     sudo rm -rf /usr/share/themes/{SolArc,SolArc-Darker,SolArc-Dark}
 
@@ -121,7 +117,6 @@ This is also true for other distros with a different GTK/Gnome version than the 
 If you get artifacts like black or invisible backgrounds under Unity, disable overlay scrollbars with
 
     gsettings set com.canonical.desktop.interface scrollbar-mode normal
-
 
 ## Bug reporting
 If you find a bug, please report it at https://github.com/apheleia/solarc-theme/issues
