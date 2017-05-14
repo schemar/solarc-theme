@@ -25,7 +25,7 @@
 <constant name="C_button_close_bg_hover" value="gtk:custom(wm_button_close_hover_bg,#f68086)" />
 <constant name="C_button_close_bg_active" value="gtk:custom(wm_button_close_active_bg,#f13039)" />
 
-<constant name="C_icon_close_bg" value="gtk:custom(wm_icon_close_bg,#F8F8F9)" />
+<constant name="C_icon_close_bg" value="gtk:custom(wm_icon_close_bg,#657b83)" />
 
 <!-- minimize, maximize -->
 <constant name="C_button_bg_hover" value="gtk:custom(wm_button_hover_bg,#fdfdfd)" />

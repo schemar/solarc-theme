@@ -87,7 +87,7 @@ $wm_button_close_bg: if($variant == 'light' and $darker == 'false', #f46067, #dc
 $wm_button_close_hover_bg: if($variant == 'light' and $darker == 'false', #f68086, #cb4b16);
 $wm_button_close_active_bg: if($variant == 'light' and $darker == 'false', #f13039, #dc322f);
 
-$wm_icon_close_bg: if($variant == 'light' and $darker == 'false',#F8F8F9 , #002b36);
+$wm_icon_close_bg: if($variant == 'light' and $darker == 'false',#657b83 , #002b36);
 
 // Minimize, Maximize
 $wm_button_hover_bg: if($variant == 'light' and $darker == 'false', #fdfdfd, #657b83);
