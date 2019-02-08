@@ -7,6 +7,9 @@ Colours are based on the Solarized colour scheme by [Ethan Schoonover](https://g
 
 Most of the work is done inside [solarize.sh](https://github.com/apheleia/solarc-theme/blob/master/solarize.sh), which replaces various Arc colours with matching Solarized colours.
 
+## ⚠️ Help Wanted
+If you like SolArc and want to help improve it, please get in touch! I don't have the time anymore to maintain this properly.
+
 ## SolArc is available in three variants
 ### SolArc
 ![A screenshot of the Arc theme](https://github.com/apheleia/solarc-theme/blob/master/images/preview-light.png?raw=true)
