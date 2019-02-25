@@ -6,8 +6,11 @@ ARCVERSION="20170302"
 # Directory to spit the clean themes out to
 BUILDDIR="`pwd`/build"
 
+# 3.22 has to be used to target 3.24
+GTK3VER="3.22"
+
 # Theme types to actually build (or rather, not build =P)
-AUTOGENFLAGS="--prefix=${BUILDDIR}/usr --disable-transparency --disable-cinnamon --disable-gnome-shell --disable-metacity --disable-unity"
+AUTOGENFLAGS="--prefix=${BUILDDIR}/usr --with-gnome=${GTK3VER} --disable-transparency --disable-cinnamon --disable-gnome-shell --disable-metacity --disable-unity"
 
 # Pull the Arc source
 wget "https://github.com/horst3180/arc-theme/archive/${ARCVERSION}.tar.gz"
@@ -110,7 +113,7 @@ done
 
 echo ""
 echo "### Regenerating assets"
-ASSET_FOLDERS=("gtk-2.0" "gtk-3.0/3.20" "xfwm4") # NOTE: Skipping old gtk3 versions for build time
+ASSET_FOLDERS=("gtk-2.0" "gtk-3.0/${GTK3VER}" "xfwm4") # NOTE: Skipping old gtk3 versions for build time
 echo "## Deleting old assets"
 cd "${CWD}"
 for folder in "${ASSET_FOLDERS[@]}"
