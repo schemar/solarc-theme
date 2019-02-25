@@ -96,6 +96,7 @@ ARC_COLORS=(      "$A_BASE"   "$A_TEXT"  "$A_BG"     "$A_FG"    "$A_SELECTED_FG"
 SOLARIZED_COLORS=("$S_BASE03" "$S_BASE0" "$S_BASE02" "$S_BASE0" "$S_BASE3"       "$S_BLUE"        "$S_ORANGE"  "$S_RED"   "$S_GREEN"   "$S_RED"          "$S_CYAN"     "$S_YELLOW"      "$S_RED"                "$S_ORANGE"                   "$S_RED"                       "$S_BASE03"           "$S_BASE00"             "$S_BLUE"                "$S_BASE03"                 "$S_BASE1"      "$S_BASE00"               "$S_BASE1"            "$S_BASE3"             "$S_BASE02"    "$S_BASE00"          "$S_BASE00"       "$S_BLUE" "$S_BASE3" "$S_BASE2" "$S_BASE03" "$S_BASE03"  "$S_BASE03"   "$S_BASE03"      "$S_BASE02"       "$S_BASE02"             "$S_BASE03" "$S_BASE03"     "$S_BASE02"      "$S_BASE00"     "$S_BASE00"       "$S_BASE02"           "$S_BASE00"              "$S_BASE03"              "$S_BASE03"              "$S_BASE03"         "$S_BASE03"             "$S_BASE0"        "$S_BASE00"            "$S_BASE02"            "$S_BASE2")
 
 CWD="`pwd`/arc-theme-${ARCVERSION}"
+cd "${CWD}"
 
 echo "### Replacing arc colors with solarized colors"
 for filetype in "${FILETYPES[@]}"
@@ -116,7 +117,7 @@ echo ""
 echo "### Regenerating assets"
 ASSET_FOLDERS=("gtk-2.0" "gtk-3.0/${GTK3VER}" "xfwm4") # NOTE: Skipping old gtk3 versions for build time
 echo "## Deleting old assets"
-cd "${CWD}"
+
 for folder in "${ASSET_FOLDERS[@]}"
 do
     rm -f common/${folder}/assets/*.png
