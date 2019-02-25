@@ -130,11 +130,6 @@ do
     cd "${CWD}"
 done
 
-echo "# Writing assets for gtk-2.0 dark"
-cd common/gtk-2.0
-./render-dark-assets.sh > /dev/null
-cd "${CWD}"
-
 echo "# Copying assets for gtk-2.0 menubar and toolbar"
 cp common/gtk-2.0/assets-dark/button.png common/gtk-2.0/menubar-toolbar/button.png
 cp common/gtk-2.0/assets-dark/button-hover.png common/gtk-2.0/menubar-toolbar/button-hover.png
