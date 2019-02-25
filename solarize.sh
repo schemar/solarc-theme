@@ -146,5 +146,7 @@ cp common/gtk-2.0/assets-dark/menubar.png common/gtk-2.0/menubar-toolbar/menubar
 cp common/gtk-2.0/assets/menubar_button.png common/gtk-2.0/menubar-toolbar/menubar_button.png
 cp common/gtk-2.0/assets-dark/menubar_button.png common/gtk-2.0/menubar-toolbar/menubar_button-dark.png
 
+npm install gulp gulp-sass gulp-rename # NOTE: gulp below requires these node modules
+
 echo "### Regenerating css"
 gulp
