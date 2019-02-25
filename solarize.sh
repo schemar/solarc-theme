@@ -7,7 +7,7 @@ ARCVERSION="20170302"
 BUILDDIR="`pwd`/build"
 
 # Theme types to actually build (or rather, not build =P)
-AUTOGENFLAGS="--prefix=${BUILDDIR}/usr --disable-transparency --disable-light --disable-darker --disable-cinnamon --disable-gnome-shell --disable-metacity --disable-unity"
+AUTOGENFLAGS="--prefix=${BUILDDIR}/usr --disable-transparency --disable-cinnamon --disable-gnome-shell --disable-metacity --disable-unity"
 
 # Pull the Arc source
 wget "https://github.com/horst3180/arc-theme/archive/${ARCVERSION}.tar.gz"
