@@ -105,6 +105,7 @@ do
 done
 rm -f common/gtk-2.0/assets-dark/*.png
 rm -f common/gtk-2.0/menubar-toolbar/*.png
+rm -f common/xfwm4/assets-dark/*.png
 
 echo "## Writing new assets"
 for folder in "${ASSET_FOLDERS[@]}"
