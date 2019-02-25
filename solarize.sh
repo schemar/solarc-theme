@@ -110,7 +110,7 @@ done
 
 echo ""
 echo "### Regenerating assets"
-ASSET_FOLDERS=("gtk-2.0" "gtk-3.0/3.14" "gtk-3.0/3.16" "gtk-3.0/3.18" "gtk-3.0/3.20")
+ASSET_FOLDERS=("gtk-2.0" "gtk-3.0/3.20" "xfwm4") # NOTE: Skipping old gtk3 versions for build time
 echo "## Deleting old assets"
 cd "${CWD}"
 for folder in "${ASSET_FOLDERS[@]}"
