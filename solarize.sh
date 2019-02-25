@@ -159,3 +159,6 @@ gulp
 
 # Make & install to build dir for packaging, etc.
 make install
+
+# Correct metadata in built themes
+find "${BUILDDIR}" -name "index.theme" -exec sed -i "s/Arc/SolArc/g" {} \;
