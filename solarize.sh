@@ -150,3 +150,9 @@ npm install gulp gulp-sass gulp-rename # NOTE: gulp below requires these node mo
 
 echo "### Regenerating css"
 gulp
+
+# Configure, installing to build dir
+./autogen.sh "${AUTOGENFLAGS}"
+
+# Make & install to build dir for packaging, etc.
+make install
