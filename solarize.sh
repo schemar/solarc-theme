@@ -1,5 +1,19 @@
 #!/bin/bash
 
+# Github release to base from
+ARCVERSION="20170302"
+
+# Directory to spit the clean themes out to
+BUILDDIR="`pwd`/build"
+
+# Theme types to actually build (or rather, not build =P)
+AUTOGENFLAGS="--prefix=${BUILDDIR}/usr --disable-transparency --disable-light --disable-darker --disable-cinnamon --disable-gnome-shell --disable-metacity --disable-unity --with-gnome=3.22"
+
+# Pull the Arc source
+wget "https://github.com/horst3180/arc-theme/archive/${ARCVERSION}.tar.gz"
+tar -xzf "${ARCVERSION}.tar.gz"
+rm "${ARCVERSION}.tar.gz"
+
 # Arc colors
 ## SCSS
 A_BASE="404552"
