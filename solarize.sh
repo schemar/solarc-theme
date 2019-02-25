@@ -164,3 +164,10 @@ make install
 
 # Correct metadata in built themes
 find "${BUILDDIR}" -name "index.theme" -exec sed -i "s/Arc/SolArc/g" {} \;
+
+# Correct directory names for built themes
+for THEME in "Arc" "Arc-Darker" "Arc-Dark"; do
+    if [ -d "${BUILDDIR}/usr/share/themes/${THEME}" ]; then
+        mv "${BUILDDIR}/usr/share/themes/${THEME}" "${BUILDDIR}/usr/share/themes/Sol${THEME}"
+    fi
+done
