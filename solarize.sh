@@ -151,6 +151,11 @@ cp common/gtk-2.0/assets-dark/menubar.png common/gtk-2.0/menubar-toolbar/menubar
 cp common/gtk-2.0/assets/menubar_button.png common/gtk-2.0/menubar-toolbar/menubar_button.png
 cp common/gtk-2.0/assets-dark/menubar_button.png common/gtk-2.0/menubar-toolbar/menubar_button-dark.png
 
+# Correct index.theme metadata & output directories
+for PATTERN in "Makefile.am" "index.theme*" "metacity-theme-*.xml"; do
+    find "${CWD}/common" -name "${PATTERN}" -exec sed -i "s/Arc/SolArc/g" {} \;
+done
+
 npm install gulp gulp-sass gulp-rename # NOTE: gulp below requires these node modules
 
 echo "### Regenerating css"
@@ -162,12 +167,3 @@ gulp
 # Make & install to build dir for packaging, etc.
 make install
 
-# Correct metadata in built themes
-find "${BUILDDIR}" -name "index.theme" -exec sed -i "s/Arc/SolArc/g" {} \;
-
-# Correct directory names for built themes
-for THEME in "Arc" "Arc-Darker" "Arc-Dark"; do
-    if [ -d "${BUILDDIR}/usr/share/themes/${THEME}" ]; then
-        mv "${BUILDDIR}/usr/share/themes/${THEME}" "${BUILDDIR}/usr/share/themes/Sol${THEME}"
-    fi
-done
