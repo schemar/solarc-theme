@@ -10,7 +10,7 @@ BUILDDIR="`pwd`/build"
 GTK3VER="3.22"
 
 # Theme types to actually build (or rather, not build =P)
-AUTOGENFLAGS="--prefix=${BUILDDIR}/usr --with-gnome=${GTK3VER} --disable-transparency --disable-cinnamon --disable-gnome-shell --disable-metacity --disable-unity"
+AUTOGENFLAGS="--prefix=${BUILDDIR}/usr --with-gnome=${GTK3VER}"
 
 # Pull the Arc source
 wget "https://github.com/horst3180/arc-theme/archive/${ARCVERSION}.tar.gz"
