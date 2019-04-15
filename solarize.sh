@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Github release to base from
-ARCVERSION="20170302"
+ARCVERSION="20190330"
 
 # Directory to spit the clean themes out to
 BUILDDIR="`pwd`/build"
@@ -13,9 +13,9 @@ GTK3VER="3.22"
 AUTOGENFLAGS="--prefix=${BUILDDIR}/usr --with-gnome=${GTK3VER}"
 
 # Pull the Arc source
-wget "https://github.com/horst3180/arc-theme/archive/${ARCVERSION}.tar.gz"
-tar -xzf "${ARCVERSION}.tar.gz"
-rm "${ARCVERSION}.tar.gz"
+wget "https://github.com/NicoHood/arc-theme/releases/download/${ARCVERSION}/arc-theme-${ARCVERSION}.tar.xz"
+tar -xJf "arc-theme-${ARCVERSION}.tar.xz"
+rm "arc-theme-${ARCVERSION}.tar.xz"
 
 # Arc colors
 ## SCSS
