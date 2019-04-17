@@ -161,6 +161,7 @@ cp common/gtk-2.0/assets-dark/menubar_button.png common/gtk-2.0/menubar-toolbar/
 for PATTERN in "Makefile.am" "index.theme*" "metacity-theme-*.xml"; do
     find "${CWD}/common" -name "${PATTERN}" -exec sed -i "s/Arc/SolArc/g" {} \;
 done
+sed -i "s/Arc/SolArc/g" configure.ac;
 
 npm install gulp gulp-sass gulp-rename # NOTE: gulp below requires these node modules
 
