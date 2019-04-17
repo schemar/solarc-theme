@@ -9,8 +9,11 @@ BUILDDIR="`pwd`/build"
 # 3.22 has to be used to target 3.24
 GTK3VER="3.22"
 
+# Gnome shell version, if not autodetecting
+GNOMEVER="3.28"
+
 # Theme types to actually build (or rather, not build =P)
-AUTOGENFLAGS="--prefix=${BUILDDIR}/usr --with-gnome=${GTK3VER}"
+AUTOGENFLAGS="--prefix=${BUILDDIR}/usr --with-gnome=${GTK3VER} --with-gnome-shell=${GNOMEVER} --disable-plank --disable-openbox" # plank & openbox not patched atm.
 
 # Pull the Arc source
 wget "https://github.com/NicoHood/arc-theme/releases/download/${ARCVERSION}/arc-theme-${ARCVERSION}.tar.xz"
