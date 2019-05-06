@@ -212,44 +212,6 @@ do
     find . -type f -name "gtkrc*" -exec sed -i "s/${K}/${REPLACE[$K]}/Ig" {} \;
 done
 
-echo ""
-echo "### Regenerating assets"
-ASSET_FOLDERS=("gtk-2.0" "gtk-3.0/${GTK3VER}" "xfwm4") # NOTE: Skipping old gtk3 versions for build time
-echo "## Deleting old assets"
-
-for folder in "${ASSET_FOLDERS[@]}"
-do
-    rm -f common/${folder}/assets/*.png
-done
-rm -f common/gtk-2.0/assets-dark/*.png
-rm -f common/gtk-2.0/menubar-toolbar/*.png
-rm -f common/xfwm4/assets-dark/*.png
-
-echo "## Writing new assets"
-for folder in "${ASSET_FOLDERS[@]}"
-do
-    echo "# Writing assets for ${folder}"
-    cd common/${folder}
-    ./render-assets.sh > /dev/null
-    cd "${CWD}"
-done
-
-echo "# Copying assets for gtk-2.0 menubar and toolbar"
-cp common/gtk-2.0/assets-dark/button.png common/gtk-2.0/menubar-toolbar/button.png
-cp common/gtk-2.0/assets-dark/button-hover.png common/gtk-2.0/menubar-toolbar/button-hover.png
-cp common/gtk-2.0/assets-dark/button-active.png common/gtk-2.0/menubar-toolbar/button-active.png
-cp common/gtk-2.0/assets-dark/button-insensitive.png common/gtk-2.0/menubar-toolbar/button-insensitive.png
-cp common/gtk-2.0/assets/entry-toolbar.png common/gtk-2.0/menubar-toolbar/entry-toolbar.png
-cp common/gtk-2.0/assets/entry-active-toolbar.png common/gtk-2.0/menubar-toolbar/entry-active-toolbar.png
-cp common/gtk-2.0/assets/entry-disabled-toolbar.png common/gtk-2.0/menubar-toolbar/entry-disabled-toolbar.png
-cp common/gtk-2.0/assets-dark/entry-toolbar.png common/gtk-2.0/menubar-toolbar/entry-toolbar-dark.png
-cp common/gtk-2.0/assets-dark/entry-active-toolbar.png common/gtk-2.0/menubar-toolbar/entry-active-toolbar-dark.png
-cp common/gtk-2.0/assets-dark/entry-disabled-toolbar.png common/gtk-2.0/menubar-toolbar/entry-disabled-toolbar-dark.png
-cp common/gtk-2.0/assets/menubar.png common/gtk-2.0/menubar-toolbar/menubar.png
-cp common/gtk-2.0/assets-dark/menubar.png common/gtk-2.0/menubar-toolbar/menubar-dark.png
-cp common/gtk-2.0/assets/menubar_button.png common/gtk-2.0/menubar-toolbar/menubar_button.png
-cp common/gtk-2.0/assets-dark/menubar_button.png common/gtk-2.0/menubar-toolbar/menubar_button-dark.png
-
 # Correct index.theme metadata & output directories
 for PATTERN in "Makefile.am" "index.theme*" "metacity-theme-*.xml"; do
     find "${CWD}/common" -name "${PATTERN}" -exec sed -i "s/Arc/SolArc/g" {} \;
