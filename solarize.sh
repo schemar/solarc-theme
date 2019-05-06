@@ -256,11 +256,6 @@ for PATTERN in "Makefile.am" "index.theme*" "metacity-theme-*.xml"; do
 done
 sed -i "s/Arc/SolArc/g" configure.ac;
 
-npm install gulp gulp-sass gulp-rename # NOTE: gulp below requires these node modules
-
-echo "### Regenerating css"
-gulp
-
 # Configure, installing to build dir
 ./autogen.sh "${AUTOGENFLAGS}"
 
