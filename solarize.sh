@@ -7,7 +7,7 @@ ARCVERSION="20190330"
 BUILDDIR="`pwd`/build"
 
 # 3.22 has to be used to target 3.24
-GTK3VER="3.22"
+GTK3VER="3.24"
 
 # Gnome shell version, if not autodetecting
 GNOMEVER="3.28"
