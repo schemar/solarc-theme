@@ -213,7 +213,7 @@ do
 done
 
 # Correct index.theme metadata & output directories
-for PATTERN in "Makefile.am" "index.theme*" "metacity-theme-*.xml"; do
+for PATTERN in "index.theme*" "metacity-theme-*.xml"; do
     find "${CWD}/common" -name "${PATTERN}" -exec sed -i "s/Arc/SolArc/g" {} \;
 done
 sed -i "s/Arc/SolArc/g" configure.ac;
