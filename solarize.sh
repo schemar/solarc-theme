@@ -13,7 +13,7 @@ GTK3VER="3.24"
 GNOMEVER="3.28"
 
 # Theme types to actually build (or rather, not build =P)
-AUTOGENFLAGS="--prefix=${BUILDDIR}/usr --with-gnome=${GTK3VER} --with-gnome-shell=${GNOMEVER} --disable-plank --disable-openbox" # plank & openbox not patched atm.
+AUTOGENFLAGS="--prefix=/usr --with-gnome=${GTK3VER} --with-gnome-shell=${GNOMEVER} --disable-plank --disable-openbox" # plank & openbox not patched atm.
 
 # Pull the Arc source
 wget "https://github.com/NicoHood/arc-theme/releases/download/${ARCVERSION}/arc-theme-${ARCVERSION}.tar.xz"
@@ -222,5 +222,5 @@ sed -i "s/Arc/SolArc/g" configure.ac;
 ./autogen.sh "${AUTOGENFLAGS}"
 
 # Make & install to build dir for packaging, etc.
-make install
+make DESTDIR="${BUILDDIR}" install
 
