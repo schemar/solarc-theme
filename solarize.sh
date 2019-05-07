@@ -212,6 +212,12 @@ do
     find . -type f -name "gtkrc*" -exec sed -i "s/${K}/${REPLACE[$K]}/Ig" {} \;
 done
 
+echo "## Replacing in openbox/xfwm rc"
+for K in ${!REPLACE[@]}
+do
+    find . -type f -name "themerc" -exec sed -i "s/${K}/${REPLACE[$K]}/Ig" {} \;
+done
+
 # Correct index.theme metadata & output directories
 for PATTERN in "index.theme*" "metacity-theme-*.xml"; do
     find "${CWD}/common" -name "${PATTERN}" -exec sed -i "s/Arc/SolArc/g" {} \;
