@@ -205,6 +205,9 @@ REPLACE[$A_GTK2_LIGHT_MENUBAR_STROKE]="e1d6b4"
 CWD="`pwd`/arc-theme-${ARCVERSION}"
 cd "${CWD}"
 
+echo "### Optimising SVGs"
+find . -name "*.svg" -exec inkscape {} --vacuum-defs --export-plain-svg={} \;
+
 FILETYPES=('.scss' '.svg' '.xpm' '.xml' 'rc')
 
 echo "### Replacing arc colors with solarized colors"
@@ -222,9 +225,6 @@ for PATTERN in "index.theme*" "metacity-theme-*.xml"; do
     find "${CWD}/common" -name "${PATTERN}" -exec sed -i "s/Arc/SolArc/g" {} \;
 done
 sed -i "s/Arc/SolArc/g" configure.ac;
-
-echo "### Optimising SVGs"
-find . -name "*.svg" -exec inkscape {} --vacuum-defs --export-plain-svg={} \;
 
 # Configure, installing to build dir
 ./autogen.sh "${AUTOGENFLAGS}"
