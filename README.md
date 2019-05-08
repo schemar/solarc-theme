@@ -77,21 +77,24 @@ If you want to install the latest version from git, clone the repository with
 
 Other options to pass to autogen.sh are
 
-    --disable-transparency     disable transparency in the GTK3 theme
-    --disable-light            disable SolArc Light support
-    --disable-darker           disable SolArc Darker support
-    --disable-dark             disable SolArc Dark support
-    --disable-cinnamon         disable Cinnamon support
-    --disable-gnome-shell      disable GNOME Shell support
-    --disable-gtk2             disable GTK2 support
-    --disable-gtk3             disable GTK3 support
-    --disable-metacity         disable Metacity support
-    --disable-unity            disable Unity support
-    --disable-xfwm             disable XFWM support
+    --disable-transparency         disable transparency in the GTK3 theme
+    --disable-light                disable Arc Light support
+    --disable-darker               disable Arc Darker support
+    --disable-dark                 disable Arc Dark support
+    --disable-cinnamon             disable Cinnamon support
+    --disable-gnome-shell          disable GNOME Shell support
+    --disable-gtk2                 disable GTK2 support
+    --disable-gtk3                 disable GTK3 support
+    --disable-metacity             disable Metacity support
+    --disable-unity                disable Unity support
+    --disable-xfwm                 disable XFWM support
+    --disable-plank                disable Plank theme support
+    --disable-openbox              disable Openbox support
 
-    --with-gnome=<version>     build the theme for a specific Gnome version (3.14, 3.16, 3.18, 3.20)
-                               Note: Normally the correct version is detected automatically and this
-                               option should not be needed.
+    --with-gnome-shell=<version>   build the gnome-shell theme for a specific version
+    --with-gtk3=<version>          build the GTK3 theme for a specific version
+                                   Note: Normally the correct version is detected automatically
+                                   and these options should not be needed.
 
 After the installation is complete you can activate the theme with `gnome-tweak-tool` or a similar program by selecting `SolArc`, `SolArc-Darker` or `SolArc-Dark` as Window/GTK+ theme and `SolArc` or `SolArc-Dark` as Gnome-Shell and Xfce-Notify theme.
 
