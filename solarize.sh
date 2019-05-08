@@ -3,18 +3,6 @@
 # Github release to base from
 ARCVERSION="20190330"
 
-# Directory to spit the clean themes out to
-BUILDDIR="`pwd`/build"
-
-# 3.22 has to be used to target 3.24
-GTK3VER="3.24"
-
-# Gnome shell version, if not autodetecting
-GNOMEVER="3.28"
-
-# Theme types to actually build (or rather, not build =P)
-AUTOGENFLAGS="--prefix=/usr --with-gnome=${GTK3VER} --with-gnome-shell=${GNOMEVER}"
-
 # Pull the Arc source
 echo "### Downloading Arc source"
 wget --quiet "https://github.com/NicoHood/arc-theme/releases/download/${ARCVERSION}/arc-theme-${ARCVERSION}.tar.xz"
@@ -225,10 +213,4 @@ for PATTERN in "index.theme*" "metacity-theme-*.xml"; do
     find "${CWD}/common" -name "${PATTERN}" -exec sed -i "s/Arc/SolArc/g" {} \;
 done
 sed -i "s/Arc/SolArc/g" configure.ac;
-
-# Configure, installing to build dir
-./autogen.sh "${AUTOGENFLAGS}"
-
-# Make & install to build dir for packaging, etc.
-make DESTDIR="${BUILDDIR}" install
 
