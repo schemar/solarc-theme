@@ -233,7 +233,7 @@ for PATTERN in "index.theme*" "metacity-theme-*.xml"; do
 done
 sed -i "s/Arc/SolArc/g" configure.ac;
 
-echo '## Optimising SVGs'
+echo "### Optimising SVGs"
 find . -name "*.svg" -exec inkscape {} --vacuum-defs --export-plain-svg={} \;
 
 # Configure, installing to build dir
