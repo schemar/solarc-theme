@@ -3,12 +3,6 @@
 # Github release to base from
 ARCVERSION="20190330"
 
-# Pull the Arc source
-echo "### Downloading Arc source"
-wget --quiet "https://github.com/NicoHood/arc-theme/releases/download/${ARCVERSION}/arc-theme-${ARCVERSION}.tar.xz"
-tar -xJf "arc-theme-${ARCVERSION}.tar.xz"
-rm "arc-theme-${ARCVERSION}.tar.xz"
-
 # Arc colors
 ## SCSS
 A_BASE="404552"
@@ -189,6 +183,12 @@ REPLACE[$A_GTK2_LIGHT_SCROLLBAR_BORDER]="e1d6b4"
 REPLACE[$A_GTK2_LIGHT_SLIDER_STROKE]="908f89"
 REPLACE[$A_GTK2_LIGHT_TAB_BORDER]="e1d6b4"
 REPLACE[$A_GTK2_LIGHT_MENUBAR_STROKE]="e1d6b4"
+
+# Pull the Arc source
+echo "### Downloading Arc source"
+wget --quiet "https://github.com/NicoHood/arc-theme/releases/download/${ARCVERSION}/arc-theme-${ARCVERSION}.tar.xz"
+tar -xJf "arc-theme-${ARCVERSION}.tar.xz"
+rm "arc-theme-${ARCVERSION}.tar.xz"
 
 CWD="`pwd`/arc-theme-${ARCVERSION}"
 cd "${CWD}"
