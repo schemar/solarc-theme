@@ -65,8 +65,13 @@ If you want to install the latest version from git, clone the repository with
 
     git clone https://github.com/apheleia/solarc-theme --depth 1 && cd solarc-theme
 
-**2. Build and install the theme**
+**2. Download & patch the Arc theme source**
 
+    ./solarize.sh
+
+**3. Build and install the patched theme**
+
+    cd arc-theme-[version]
     ./autogen.sh --prefix=/usr
     sudo make install
 
