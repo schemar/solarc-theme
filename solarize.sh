@@ -13,7 +13,7 @@ GTK3VER="3.24"
 GNOMEVER="3.28"
 
 # Theme types to actually build (or rather, not build =P)
-AUTOGENFLAGS="--prefix=/usr --with-gnome=${GTK3VER} --with-gnome-shell=${GNOMEVER} --disable-plank --disable-openbox" # plank & openbox not patched atm.
+AUTOGENFLAGS="--prefix=/usr --with-gnome=${GTK3VER} --with-gnome-shell=${GNOMEVER}"
 
 # Pull the Arc source
 wget "https://github.com/NicoHood/arc-theme/releases/download/${ARCVERSION}/arc-theme-${ARCVERSION}.tar.xz"
@@ -98,6 +98,10 @@ A_GTK2_LIGHT_SCROLLBAR_BORDER="dbdfe3"
 A_GTK2_LIGHT_SLIDER_STROKE="cbd2e3"
 A_GTK2_LIGHT_TAB_BORDER="dde3e9"
 A_GTK2_LIGHT_MENUBAR_STROKE="d7d8dd"
+## Openbox
+A_OPENBOX_MENU_ITEM_BG="454a54"
+A_OPENBOX_MENU_ITEM_FG="a8adb5"
+A_OPENBOX_MENU_TITLE_BG="2d3036"
 
 # Solarized colors
 ## Common
@@ -168,6 +172,10 @@ REPLACE[$A_LIGHT_BG]=$S_BASE2
 REPLACE[$A_GTK2_INSENSITIVE_FG_COLOR]=$S_BASE01
 REPLACE[$A_SWITCH_OFF_BG]=$S_BASE01
 REPLACE[$A_LIGHT_FG]=$S_BASE00
+# Openbox
+REPLACE[$A_OPENBOX_MENU_ITEM_BG]=$S_BASE03
+REPLACE[$A_OPENBOX_MENU_ITEM_FG]=$S_BASE0
+REPLACE[$A_OPENBOX_MENU_TITLE_BG]=$S_BASE02
 # GTK2 tweaks
 REPLACE[$A_ASSET_LIGHTER_BG]="033441"
 REPLACE[$A_ASSET_LIGHTER_BG_FIX]="033441"
@@ -210,6 +218,12 @@ echo "## Replacing in gtk-2.0 rc"
 for K in ${!REPLACE[@]}
 do
     find . -type f -name "gtkrc*" -exec sed -i "s/${K}/${REPLACE[$K]}/Ig" {} \;
+done
+
+echo "## Replacing in openbox/xfwm rc"
+for K in ${!REPLACE[@]}
+do
+    find . -type f -name "themerc" -exec sed -i "s/${K}/${REPLACE[$K]}/Ig" {} \;
 done
 
 # Correct index.theme metadata & output directories
