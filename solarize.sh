@@ -124,7 +124,6 @@ S_BASE1="93a1a1"
 S_BASE2="eee8d5"
 S_BASE3="fdf6e3"
 
-FILETYPES=('scss' 'svg' 'xpm' 'xml' 'rc')
 declare -A REPLACE
 REPLACE[$A_BASE]=$S_BASE03
 REPLACE[$A_TEXT]=$S_BASE0
@@ -206,25 +205,16 @@ REPLACE[$A_GTK2_LIGHT_MENUBAR_STROKE]="e1d6b4"
 CWD="`pwd`/arc-theme-${ARCVERSION}"
 cd "${CWD}"
 
+FILETYPES=('.scss' '.svg' '.xpm' '.xml' 'rc')
+
 echo "### Replacing arc colors with solarized colors"
 for filetype in "${FILETYPES[@]}"
 do
     echo "## Replacing in ${filetype}"
     for K in ${!REPLACE[@]}
     do
-        find . -name "*.${filetype}" -exec sed -i "s/${K}/${REPLACE[$K]}/Ig" {} \;
+        find . -type f -name "*${filetype}" -exec sed -i "s/${K}/${REPLACE[$K]}/Ig" {} \;
     done
-done
-echo "## Replacing in gtk-2.0 rc"
-for K in ${!REPLACE[@]}
-do
-    find . -type f -name "gtkrc*" -exec sed -i "s/${K}/${REPLACE[$K]}/Ig" {} \;
-done
-
-echo "## Replacing in openbox/xfwm rc"
-for K in ${!REPLACE[@]}
-do
-    find . -type f -name "themerc" -exec sed -i "s/${K}/${REPLACE[$K]}/Ig" {} \;
 done
 
 # Correct index.theme metadata & output directories
