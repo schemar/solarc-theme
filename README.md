@@ -20,31 +20,6 @@ If you like SolArc and want to help improve it, please get in touch! I don't hav
 ### SolArc-Dark
 ![A screenshot of the Arc-Dark theme](https://github.com/apheleia/solarc-theme/blob/master/images/preview-dark.png?raw=true)
 
-
-## Requirements
-* Gnome/GTK3 3.14 - 3.22
-* The `gnome-themes-standard` package
-* The murrine engine. This has different names depending on your distro.
-  * `gtk-engine-murrine` (Arch Linux)
-  * `gtk2-engines-murrine` (Debian, Ubuntu, elementary OS)
-  * `gtk-murrine-engine` (Fedora)
-  * `gtk2-engine-murrine` (openSUSE)
-  * `gtk-engines-murrine` (Gentoo)
-
-Main distributions that meet these requirements are
-
-* Arch Linux and Arch Linux based distros
-* Ubuntu 15.04 or newer (**Ubuntu 14.04 and 14.10 are not supported**)
-* elementary OS Freya/Loki
-* Debian 8, Testing or Unstable
-* Gentoo
-* Fedora 21 or newer
-* openSUSE 13.2, Leap 42.1 and Tumbleweed
-
-Derivatives of these distributions should work, as well.
-
-If your distribution isn't listed, please check the requirements yourself.
-
 ## Installation
 ### Arch Linux
 You can install the AUR package: [gtk-theme-solarc-git](https://aur.archlinux.org/packages/gtk-theme-solarc-git/)
@@ -56,14 +31,30 @@ You can install the AUR package: [gtk-theme-solarc-git](https://aur.archlinux.or
     rm -rf ~/.local/share/themes/{SolArc,SolArc-Darker,SolArc-Dark}
     rm -rf ~/.themes/{SolArc,SolArc-Darker,SolArc-Dark}
 
-To build the theme you'll need
+To build the theme the following packages are required
 * `autoconf`
 * `automake`
-* `pkg-config` or `pkgconfig` if you use Fedora
-* `libgtk-3-dev` for Debian based distros or `gtk3-devel` for RPM based distros
-* `git` if you want to clone the source directory
+* `sassc` for GTK 3, Cinnamon, or GNOME Shell
+* `pkg-config` or `pkgconfig` for Fedora
+* `git` to clone the source directory
+* `optipng` for GTK 2, GTK 3, or XFWM
+* `inkscape` for GTK 2, GTK 3, or XFWM
 
-If your distributions doesn't ship separate development packages you just need GTK 3 instead of the `-dev` packages.
+The following packages are optionally required
+* `gnome-shell`for auto-detecting the GNOME Shell version
+* `libgtk-3-dev` for Debian based distros or `gtk3-devel` for RPM based distros, for auto-detecting the GTK3 version
+
+**Note:** For distributions which don't ship separate development packages, just the GTK 3 package is needed instead of the `-dev` packages.
+
+For the theme to function properly, install the following
+* GNOME Shell 3.18 - 3.32, GTK 3.18 - 3.24
+* The `gnome-themes-extra` package
+* The murrine engine. This has different names depending on the distro.
+  * `gtk-engine-murrine` (Arch Linux)
+  * `gtk2-engines-murrine` (Debian, Ubuntu, elementary OS)
+  * `gtk-murrine-engine` (Fedora)
+  * `gtk2-engine-murrine` (openSUSE)
+  * `gtk-engines-murrine` (Gentoo)
 
 Install the theme with the following commands
 
