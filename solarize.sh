@@ -16,7 +16,8 @@ GNOMEVER="3.28"
 AUTOGENFLAGS="--prefix=/usr --with-gnome=${GTK3VER} --with-gnome-shell=${GNOMEVER}"
 
 # Pull the Arc source
-wget "https://github.com/NicoHood/arc-theme/releases/download/${ARCVERSION}/arc-theme-${ARCVERSION}.tar.xz"
+echo "### Downloading Arc source"
+wget --quiet "https://github.com/NicoHood/arc-theme/releases/download/${ARCVERSION}/arc-theme-${ARCVERSION}.tar.xz"
 tar -xJf "arc-theme-${ARCVERSION}.tar.xz"
 rm "arc-theme-${ARCVERSION}.tar.xz"
 
