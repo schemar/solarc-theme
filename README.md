@@ -34,6 +34,7 @@ You can install the AUR package: [gtk-theme-solarc-git](https://aur.archlinux.or
 To build the theme the following packages are required
 * `autoconf`
 * `automake`
+* `wget` for pulling the Arc source
 * `sassc` for GTK 3, Cinnamon, or GNOME Shell
 * `pkg-config` or `pkgconfig` for Fedora
 * `git` to clone the source directory
