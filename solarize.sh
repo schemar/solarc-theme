@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Github release to base from
+ARCVERSION="20190330"
+
 # Arc colors
 ## SCSS
 A_BASE="404552"
@@ -78,6 +81,10 @@ A_GTK2_LIGHT_SCROLLBAR_BORDER="dbdfe3"
 A_GTK2_LIGHT_SLIDER_STROKE="cbd2e3"
 A_GTK2_LIGHT_TAB_BORDER="dde3e9"
 A_GTK2_LIGHT_MENUBAR_STROKE="d7d8dd"
+## Openbox
+A_OPENBOX_MENU_ITEM_BG="454a54"
+A_OPENBOX_MENU_ITEM_FG="a8adb5"
+A_OPENBOX_MENU_TITLE_BG="2d3036"
 
 # Solarized colors
 ## Common
@@ -99,7 +106,6 @@ S_BASE1="93a1a1"
 S_BASE2="eee8d5"
 S_BASE3="fdf6e3"
 
-FILETYPES=('scss' 'svg' 'xpm' 'xml' 'rc')
 declare -A REPLACE
 REPLACE[$A_BASE]=$S_BASE03
 REPLACE[$A_TEXT]=$S_BASE0
@@ -148,6 +154,10 @@ REPLACE[$A_LIGHT_BG]=$S_BASE2
 REPLACE[$A_GTK2_INSENSITIVE_FG_COLOR]=$S_BASE01
 REPLACE[$A_SWITCH_OFF_BG]=$S_BASE01
 REPLACE[$A_LIGHT_FG]=$S_BASE00
+# Openbox
+REPLACE[$A_OPENBOX_MENU_ITEM_BG]=$S_BASE03
+REPLACE[$A_OPENBOX_MENU_ITEM_FG]=$S_BASE0
+REPLACE[$A_OPENBOX_MENU_TITLE_BG]=$S_BASE02
 # GTK2 tweaks
 REPLACE[$A_ASSET_LIGHTER_BG]="033441"
 REPLACE[$A_ASSET_LIGHTER_BG_FIX]="033441"
@@ -174,7 +184,19 @@ REPLACE[$A_GTK2_LIGHT_SLIDER_STROKE]="908f89"
 REPLACE[$A_GTK2_LIGHT_TAB_BORDER]="e1d6b4"
 REPLACE[$A_GTK2_LIGHT_MENUBAR_STROKE]="e1d6b4"
 
-CWD=`pwd`
+# Pull the Arc source
+echo "### Downloading Arc source"
+wget --quiet "https://github.com/NicoHood/arc-theme/releases/download/${ARCVERSION}/arc-theme-${ARCVERSION}.tar.xz"
+tar -xJf "arc-theme-${ARCVERSION}.tar.xz"
+rm "arc-theme-${ARCVERSION}.tar.xz"
+
+CWD="`pwd`/arc-theme-${ARCVERSION}"
+cd "${CWD}"
+
+echo "### Optimising SVGs"
+find . -name "*.svg" -exec inkscape {} --vacuum-defs --export-plain-svg={} \;
+
+FILETYPES=('.scss' '.svg' '.xpm' '.xml' 'rc')
 
 echo "### Replacing arc colors with solarized colors"
 for filetype in "${FILETYPES[@]}"
@@ -182,57 +204,13 @@ do
     echo "## Replacing in ${filetype}"
     for K in ${!REPLACE[@]}
     do
-        find . -name "*.${filetype}" -exec sed -i "s/${K}/${REPLACE[$K]}/Ig" {} \;
+        find . -type f -name "*${filetype}" -exec sed -i "s/${K}/${REPLACE[$K]}/Ig" {} \;
     done
 done
-echo "## Replacing in gtk-2.0 rc"
-for K in ${!REPLACE[@]}
-do
-    find . -type f -name "gtkrc*" -exec sed -i "s/${K}/${REPLACE[$K]}/Ig" {} \;
+
+# Correct index.theme metadata & output directories
+for PATTERN in "index.theme*" "metacity-theme-*.xml"; do
+    find "${CWD}/common" -name "${PATTERN}" -exec sed -i "s/Arc/SolArc/g" {} \;
 done
+sed -i "s/Arc/SolArc/g" configure.ac;
 
-echo ""
-echo "### Regenerating assets"
-ASSET_FOLDERS=("gtk-2.0" "gtk-3.0/3.14" "gtk-3.0/3.16" "gtk-3.0/3.18" "gtk-3.0/3.20" "xfwm4")
-echo "## Deleting old assets"
-cd "${CWD}"
-for folder in "${ASSET_FOLDERS[@]}"
-do
-    rm -f common/${folder}/assets/*.png
-done
-rm -f common/gtk-2.0/assets-dark/*.png
-rm -f common/gtk-2.0/menubar-toolbar/*.png
-rm -f common/xfwm4/assets-dark/*.png
-
-echo "## Writing new assets"
-for folder in "${ASSET_FOLDERS[@]}"
-do
-    echo "# Writing assets for ${folder}"
-    cd common/${folder}
-    ./render-assets.sh > /dev/null
-    cd "${CWD}"
-done
-
-echo "# Writing assets for gtk-2.0 dark"
-cd common/gtk-2.0
-./render-dark-assets.sh > /dev/null
-cd "${CWD}"
-
-echo "# Copying assets for gtk-2.0 menubar and toolbar"
-cp common/gtk-2.0/assets-dark/button.png common/gtk-2.0/menubar-toolbar/button.png
-cp common/gtk-2.0/assets-dark/button-hover.png common/gtk-2.0/menubar-toolbar/button-hover.png
-cp common/gtk-2.0/assets-dark/button-active.png common/gtk-2.0/menubar-toolbar/button-active.png
-cp common/gtk-2.0/assets-dark/button-insensitive.png common/gtk-2.0/menubar-toolbar/button-insensitive.png
-cp common/gtk-2.0/assets/entry-toolbar.png common/gtk-2.0/menubar-toolbar/entry-toolbar.png
-cp common/gtk-2.0/assets/entry-active-toolbar.png common/gtk-2.0/menubar-toolbar/entry-active-toolbar.png
-cp common/gtk-2.0/assets/entry-disabled-toolbar.png common/gtk-2.0/menubar-toolbar/entry-disabled-toolbar.png
-cp common/gtk-2.0/assets-dark/entry-toolbar.png common/gtk-2.0/menubar-toolbar/entry-toolbar-dark.png
-cp common/gtk-2.0/assets-dark/entry-active-toolbar.png common/gtk-2.0/menubar-toolbar/entry-active-toolbar-dark.png
-cp common/gtk-2.0/assets-dark/entry-disabled-toolbar.png common/gtk-2.0/menubar-toolbar/entry-disabled-toolbar-dark.png
-cp common/gtk-2.0/assets/menubar.png common/gtk-2.0/menubar-toolbar/menubar.png
-cp common/gtk-2.0/assets-dark/menubar.png common/gtk-2.0/menubar-toolbar/menubar-dark.png
-cp common/gtk-2.0/assets/menubar_button.png common/gtk-2.0/menubar-toolbar/menubar_button.png
-cp common/gtk-2.0/assets-dark/menubar_button.png common/gtk-2.0/menubar-toolbar/menubar_button-dark.png
-
-echo "### Regenerating css"
-gulp
