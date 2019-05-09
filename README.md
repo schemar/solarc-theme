@@ -96,7 +96,7 @@ Other options to pass to autogen.sh are
                                    Note: Normally the correct version is detected automatically
                                    and these options should not be needed.
 
-After the installation is complete you can activate the theme with `gnome-tweak-tool` or a similar program by selecting `SolArc`, `SolArc-Darker` or `SolArc-Dark` as Window/GTK+ theme and `SolArc` or `SolArc-Dark` as Gnome-Shell and Xfce-Notify theme.
+After the installation is complete the theme can be activated with `gnome-tweak-tool` or a similar program by selecting `SolArc`, `SolArc-Darker` or `SolArc-Dark` as Window/GTK+ theme and `SolArc` or `SolArc-Dark` as GNOME Shell/Cinnamon theme.
 
 **Uninstall the theme**
 
