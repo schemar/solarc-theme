@@ -106,7 +106,7 @@ Run
 
     sudo make uninstall
 
-from the same directory as this README resides in, or
+from the patched Arc source directory, or
 
     sudo rm -rf /usr/share/themes/{SolArc,SolArc-Darker,SolArc-Dark}
 
