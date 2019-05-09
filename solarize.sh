@@ -214,3 +214,5 @@ for PATTERN in "index.theme*" "metacity-theme-*.xml"; do
 done
 sed -i "s/Arc/SolArc/g" configure.ac;
 
+echo "### Patching complete! You may now run autogen.sh & make in arc-theme-${ARCVERSION} as you wish"
+
