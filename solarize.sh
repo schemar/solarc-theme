@@ -81,6 +81,7 @@ A_GTK2_LIGHT_SCROLLBAR_BORDER="dbdfe3"
 A_GTK2_LIGHT_SLIDER_STROKE="cbd2e3"
 A_GTK2_LIGHT_TAB_BORDER="dde3e9"
 A_GTK2_LIGHT_MENUBAR_STROKE="d7d8dd"
+A_GTK2_LIGHT_FRAME_BORDER="dfdfdf"
 ## Openbox
 A_OPENBOX_MENU_ITEM_BG="454a54"
 A_OPENBOX_MENU_ITEM_FG="a8adb5"
@@ -183,6 +184,7 @@ REPLACE[$A_GTK2_LIGHT_SCROLLBAR_BORDER]="e1d6b4"
 REPLACE[$A_GTK2_LIGHT_SLIDER_STROKE]="908f89"
 REPLACE[$A_GTK2_LIGHT_TAB_BORDER]="e1d6b4"
 REPLACE[$A_GTK2_LIGHT_MENUBAR_STROKE]="e1d6b4"
+REPLACE[$A_GTK2_LIGHT_FRAME_BORDER]="e1d6b4"
 
 # Pull the Arc source
 echo "### Downloading Arc source"
@@ -192,6 +194,9 @@ rm "arc-theme-${ARCVERSION}.tar.xz"
 
 CWD="`pwd`/arc-theme-${ARCVERSION}"
 cd "${CWD}"
+
+echo "### Applying patch(es)"
+patch -p1 < ../gtk2_png_assets.patch
 
 echo "### Optimising SVGs"
 find . -name "*.svg" -exec inkscape {} --vacuum-defs --export-plain-svg={} \;
