@@ -195,6 +195,7 @@ cd "${CWD}"
 
 echo "### Applying patch(es)"
 patch -p1 < ../gtk2_png_assets.patch
+patch -p1 < ../gtk2_dark_colour.patch
 
 echo "### Optimising SVGs"
 find . -name "*.svg" -exec inkscape {} --vacuum-defs --export-plain-svg={} \;
