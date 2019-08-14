@@ -11,26 +11,25 @@ arch=('any')
 url="https://github.com/${_pkgauthor}/${_pkgname}"
 license=('GPL3')
 depends=('gtk3' 'gtk-engine-murrine')
-makedepends=('git')
+makedepends=('git' 'wget' 'inkscape' 'sassc' 'optipng')
 source=("${_pkgname}::git+https://github.com/schemar/${_pkgname}.git")
 sha256sums=('SKIP')
 conflicts=('gtk-theme-solarc')
 provides=('gtk-theme-solarc')
 
 pkgver() {
-  cd "${srcdir}/${_pkgname}"
+    cd "${srcdir}/${_pkgname}"
     echo "$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
 }
 
 build() {
-  cd "${srcdir}/${_pkgname}"
+    cd "${srcdir}/${_pkgname}"
     ./solarize.sh
 }
 
 package() {
-  cd "${srcdir}/${_pkgname}"
+    cd "${srcdir}/${_pkgname}"
     cd $(find . -type d -name "arc-theme*")
-    echo `pwd`
     ./autogen.sh --prefix="${pkgdir}"
     make DESTDIR="${pkgdir}" install
 }
