@@ -30,7 +30,7 @@ build() {
 
 package() {
     cd "${srcdir}/${_pkgname}"
-    cd $(find . -type d -name "arc-theme-*" | tail -1)
+    cd $(ls | grep "arc-theme-" | tail -1)
     ./autogen.sh --prefix=/usr --with-gnome-shell=${_gnomeversion}
     make DESTDIR="${pkgdir}" install
 }
