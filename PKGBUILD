@@ -30,6 +30,6 @@ build() {
 package() {
     cd "${srcdir}/${_pkgname}"
     cd $(find . -type d -name "arc-theme*")
-    ./autogen.sh --prefix="${pkgdir}"
+    ./autogen.sh --prefix=/usr
     make DESTDIR="${pkgdir}" install
 }
