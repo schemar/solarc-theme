@@ -3,7 +3,7 @@
 
 pkgname=gtk-theme-solarc-git
 _pkgname=solarc-theme
-_pkgauthor=apheleia
+_pkgauthor=schemar
 _gnomeversion=3.32
 pkgver=817.3e68bc0
 pkgrel=1
