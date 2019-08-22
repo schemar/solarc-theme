@@ -26,12 +26,13 @@ pkgver() {
 build() {
     cd "${srcdir}/${_pkgname}"
     ./solarize.sh
-    cd $(ls | grep "arc-theme-" | tail -1)
+    export _arcdir=$(ls | grep "arc-theme-" | tail -1)
+    cd "${_arcdir}"
     ./autogen.sh --prefix=/usr --with-gnome-shell=${_gnomeversion}
     make
 }
 
 package() {
-    cd "${srcdir}/${_pkgname}$(ls | grep "arc-theme-" | tail -1)"
+    cd "${srcdir}/${_pkgname}/${_arcdir}"
     make DESTDIR="${pkgdir}" install
 }
