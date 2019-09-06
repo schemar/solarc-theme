@@ -1,11 +1,12 @@
-# Maintainer: zach <zach {at} zach-adams {dot} com>
+# Maintainer: Omnikron13 <joey.sabey@gmx.com>
+# Contributor: zach <zach {at} zach-adams {dot} com>
 # Contributor: Gordian Edenhofer <gordian.edenhofer[at]yahoo[dot]de
 
 pkgname=gtk-theme-solarc-git
 _pkgname=solarc-theme
 _pkgauthor=schemar
 _gnomeversion=3.32
-pkgver=817.3e68bc0
+pkgver=830.f55ce00
 pkgrel=1
 pkgdesc="A flat theme with transparent elements. Based on the Arc theme: https://github.com/NicoHood/arc-theme"
 arch=('any')
