@@ -5,20 +5,20 @@ SolArc is a fork of the Arc theme: https://github.com/NicoHood/arc-theme
 
 Colours are based on the Solarized colour scheme by [Ethan Schoonover](https://github.com/altercation): https://github.com/altercation/solarized
 
-Most of the work is done inside [solarize.sh](https://github.com/apheleia/solarc-theme/blob/master/solarize.sh), which replaces various Arc colours with matching Solarized colours.
+Most of the work is done inside [solarize.sh](https://github.com/schemar/solarc-theme/blob/master/solarize.sh), which replaces various Arc colours with matching Solarized colours.
 
 ## ⚠️ Help Wanted
 If you like SolArc and want to help improve it, please get in touch! I don't have the time anymore to maintain this properly.
 
 ## SolArc is available in three variants
 ### SolArc
-![A screenshot of the Arc theme](https://github.com/apheleia/solarc-theme/blob/master/images/preview-light.png?raw=true)
+![A screenshot of the Arc theme](https://github.com/schemar/solarc-theme/blob/master/screenshots/preview-light.png?raw=true)
 
 ### SolArc-Darker
-![A screenshot of the Arc-Darker theme](https://github.com/apheleia/solarc-theme/blob/master/images/preview-darker.png?raw=true)
+![A screenshot of the Arc-Darker theme](https://github.com/schemar/solarc-theme/blob/master/screenshots/preview-darker.png?raw=true)
 
 ### SolArc-Dark
-![A screenshot of the Arc-Dark theme](https://github.com/apheleia/solarc-theme/blob/master/images/preview-dark.png?raw=true)
+![A screenshot of the Arc-Dark theme](https://github.com/schemar/solarc-theme/blob/master/screenshots/preview-dark.png?raw=true)
 
 ## Installation
 ### Arch Linux
@@ -63,7 +63,7 @@ Install the theme with the following commands
 
 If you want to install the latest version from git, clone the repository with
 
-    git clone https://github.com/apheleia/solarc-theme --depth 1 && cd solarc-theme
+    git clone https://github.com/schemar/solarc-theme --depth 1 && cd solarc-theme
 
 **2. Download & patch the Arc theme source**
 
@@ -124,11 +124,11 @@ If you get artifacts like black or invisible backgrounds under Unity, disable ov
     gsettings set com.canonical.desktop.interface scrollbar-mode normal
 
 ## Bug reporting
-If you find a bug, please report it at https://github.com/apheleia/solarc-theme/issues
+If you find a bug, please report it at https://github.com/schemar/solarc-theme/issues
 
 ## License
 SolArc is available under the terms of the GPL-3.0. See `COPYING` for details.
 
 ## Full Preview
-![A full screenshot of the SolArc theme](https://github.com/apheleia/solarc-theme/blob/master/images/preview-complete.png?raw=true)
+![A full screenshot of the SolArc theme](https://github.com/schemar/solarc-theme/blob/master/screenshots/preview-complete.png?raw=true)
 <sub>Screenshot Details: Icons: [Arc Icon Theme](https://github.com/horst3180/arc-icon-theme) | Wallpaper: [Jason Levesque](http://stuntkid.com/) | Font: [DejaVu Sans](http://dejavu-fonts.org/wiki/Main_Page)</sub>
