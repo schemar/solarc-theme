@@ -186,7 +186,7 @@ REPLACE[$A_GTK2_LIGHT_FRAME_BORDER]="e1d6b4"
 
 # Pull the Arc source
 echo "### Downloading Arc source"
-wget --quiet "https://github.com/NicoHood/arc-theme/releases/download/${ARCVERSION}/arc-theme-${ARCVERSION}.tar.xz"
+wget --quiet "https://github.com/arc-design/arc-theme/releases/download/${ARCVERSION}/arc-theme-${ARCVERSION}.tar.xz"
 tar -xJf "arc-theme-${ARCVERSION}.tar.xz"
 rm "arc-theme-${ARCVERSION}.tar.xz"
 
