@@ -85,6 +85,11 @@ A_GTK2_LIGHT_FRAME_BORDER="dfdfdf"
 A_OPENBOX_MENU_ITEM_BG="454a54"
 A_OPENBOX_MENU_ITEM_FG="a8adb5"
 A_OPENBOX_MENU_TITLE_BG="2d3036"
+## Plank
+A_PLANK_FILL_START="53;;57;;69;;242"
+A_PLANK_FILL_END="53;;57;;69;;242"
+A_PLANK_OUTER_STROKE="22;;26;;38;;255"
+A_PLANK_INNER_STROKE="53;;57;;69;;0"
 
 # Solarized colors
 ## Common
@@ -183,6 +188,11 @@ REPLACE[$A_GTK2_LIGHT_SLIDER_STROKE]="908f89"
 REPLACE[$A_GTK2_LIGHT_TAB_BORDER]="e1d6b4"
 REPLACE[$A_GTK2_LIGHT_MENUBAR_STROKE]="e1d6b4"
 REPLACE[$A_GTK2_LIGHT_FRAME_BORDER]="e1d6b4"
+# Plank tweaks
+REPLACE[$A_PLANK_FILL_START]="7;;54;;66;;255"
+REPLACE[$A_PLANK_FILL_END]="7;;54;;66;;255"
+REPLACE[$A_PLANK_OUTER_STROKE]="5;;18;;29;;255"
+REPLACE[$A_PLANK_INNER_STROKE]="0;;43;;54;;0"
 
 # Pull the Arc source
 echo "### Downloading Arc source"
@@ -198,7 +208,7 @@ echo "### Applying patch(es)"
 echo "### Optimising SVGs"
 find . -name "*.svg" -exec inkscape {} --vacuum-defs --export-plain-svg={} \;
 
-FILETYPES=('.scss' '.svg' '.xpm' '.xml' 'rc')
+FILETYPES=('.scss' '.svg' '.xpm' '.xml' 'rc' '.theme')
 
 echo "### Replacing arc colors with solarized colors"
 for filetype in "${FILETYPES[@]}"
