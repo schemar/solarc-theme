@@ -210,7 +210,7 @@ patch -p1 < ../gtk2_dark_colour.patch
 echo "### Optimising SVGs"
 find . -name "*.svg" -exec inkscape {} --vacuum-defs --export-plain-svg={} \;
 
-FILETYPES=('.scss' '.svg' '.xpm' '.xml' 'rc')
+FILETYPES=('.scss' '.svg' '.xpm' '.xml' 'rc' '.theme')
 
 echo "### Replacing arc colors with solarized colors"
 for filetype in "${FILETYPES[@]}"
