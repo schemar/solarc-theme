@@ -220,6 +220,9 @@ do
     done
 done
 
+echo "### Patching makefiles for Inkscape 1.0"
+find . -type f -name "*.am" -exec sed -i "s/--export-png/--export-file/Ig" {} \;
+
 # Correct index.theme metadata & output directories
 for PATTERN in "index.theme*" "metacity-theme-*.xml"; do
     find "${CWD}/common" -name "${PATTERN}" -exec sed -i "s/Arc/SolArc/g" {} \;
