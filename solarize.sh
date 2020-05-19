@@ -221,7 +221,7 @@ do
 done
 
 echo "### Patching makefiles for Inkscape 1.0"
-find . -type f -name "*.am" -exec sed -i "s/--export-png/--export-file/Ig" {} \;
+find . -type f -name "*.am" -exec sed -i "s/--export-png/--export-filename/Ig" {} \;
 
 # Correct index.theme metadata & output directories
 for PATTERN in "index.theme*" "metacity-theme-*.xml"; do
