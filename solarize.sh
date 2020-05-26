@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Github release to base from
-ARCVERSION="20190917"
+ARCVERSION="20200513"
 
 # Arc colors
 ## SCSS
@@ -196,7 +196,7 @@ REPLACE[$A_PLANK_INNER_STROKE]="0;;43;;54;;0"
 
 # Pull the Arc source
 echo "### Downloading Arc source"
-wget --quiet "https://github.com/arc-design/arc-theme/releases/download/${ARCVERSION}/arc-theme-${ARCVERSION}.tar.xz"
+wget --quiet "https://github.com/jnsh/arc-theme/releases/download/${ARCVERSION}/arc-theme-${ARCVERSION}.tar.xz"
 tar -xJf "arc-theme-${ARCVERSION}.tar.xz"
 rm "arc-theme-${ARCVERSION}.tar.xz"
 
