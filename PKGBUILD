@@ -5,8 +5,9 @@
 pkgname=gtk-theme-solarc-git
 _pkgname=solarc-theme
 _pkgauthor=schemar
+_cinnamonversion=4.6.6
 _gnomeversion=3.34
-pkgver=830.f55ce00
+pkgver=845.99a3c17
 pkgrel=1
 pkgdesc="A flat theme with transparent elements. Based on the Arc theme: https://github.com/jnsh/arc-theme"
 arch=('any')
@@ -29,7 +30,7 @@ build() {
     ./solarize.sh
     export _arcdir=$(ls | grep "arc-theme-" | tail -1)
     cd "${_arcdir}"
-    ./autogen.sh --prefix=/usr --with-gnome-shell=${_gnomeversion}
+    ./autogen.sh --prefix=/usr --with-gnome-shell=${_gnomeversion} --with-cinnamon=${_cinnamonversion}
     make
 }
 
