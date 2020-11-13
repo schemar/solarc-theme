@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Github release to base from
-ARCVERSION="20200513"
+ARCVERSION="20201013"
 
 # Arc colors
 ## SCSS
