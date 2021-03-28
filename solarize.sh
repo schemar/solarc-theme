@@ -2,7 +2,7 @@
 
 # Github release to base from
 if [ -z $ARCVERSION ]; then
-    ARCVERSION="20201013"
+    ARCVERSION="20210127"
 fi
 
 # Arc colors
@@ -227,6 +227,7 @@ for PATTERN in "index.theme*" "metacity-theme-*.xml"; do
     find "${CWD}/common" -name "${PATTERN}" -exec sed -i "s/Arc/SolArc/g" {} \;
 done
 sed -i "s/Arc/SolArc/g" configure.ac;
+sed -i "s/Arc/SolArc/g" meson.options;
 
 echo "### Patching complete! You may now run autogen.sh & make in arc-theme-${ARCVERSION} as you wish"
 
