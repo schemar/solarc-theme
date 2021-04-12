@@ -1,9 +1,39 @@
 #!/bin/bash
 
-# Github release to base from
-if [ -z $ARCVERSION ]; then
-    ARCVERSION="20210127"
+# Directory that the pre-downloaded arc theme source can be located in
+ARC_DIRECTORY=
+# Whether or not to download arc
+ARC_NEED_DOWNLOAD=true
+# If downloading arc, which version to download (this should be the most recently validated version)
+if [ -z $ARC_VERSION ]; then
+    ARC_VERSION="20210412"
 fi
+
+usage()
+{
+    echo "Calling this script with no arguments will download the most recently validated version \n"
+    echo " of Arc theme and then process it. You can use --arc-version (or -v) to download a specific \n"
+    echo " version of Arc theme, or use --arc-directory (or -d) to process a pre-downloaded Arc theme \n\n"
+    echo "You may also see this message if you used invalid arguments. "
+}
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -d | --arc-directory )  shift
+                                ARC_DIRECTORY="$1"
+                                ARC_NEED_DOWNLOAD=false
+                                ;;
+        -v | --arc-version )    shift
+                                ARC_VERSION="$1"
+                                ;;
+        -h | --help )           usage
+                                exit
+                                ;;
+        * )                     usage
+                                exit 1
+    esac
+    shift
+done
 
 # Arc colors
 ## SCSS
@@ -196,20 +226,31 @@ REPLACE[$A_PLANK_FILL_END]="7;;54;;66;;255"
 REPLACE[$A_PLANK_OUTER_STROKE]="5;;18;;29;;255"
 REPLACE[$A_PLANK_INNER_STROKE]="0;;43;;54;;0"
 
-# Pull the Arc source
-echo "### Downloading Arc source"
-wget --quiet "https://github.com/jnsh/arc-theme/releases/download/${ARCVERSION}/arc-theme-${ARCVERSION}.tar.xz"
-tar -xJf "arc-theme-${ARCVERSION}.tar.xz"
-rm "arc-theme-${ARCVERSION}.tar.xz"
+CWD="`pwd`/arc-theme"
+# Remove the arc-theme folder from a previous invocation of this script.
+rm -rf "${CWD}"
 
-CWD="`pwd`/arc-theme-${ARCVERSION}"
+if [ "$ARC_NEED_DOWNLOAD" = true ] ; then
+    # Delete the Arc source from previous script invocations
+    rm -rf "`pwd`/arc-theme-${ARC_VERSION}"
+
+    # Pull the Arc source
+    echo "### Downloading Arc source"
+    wget --quiet "https://github.com/jnsh/arc-theme/releases/download/${ARC_VERSION}/arc-theme-${ARC_VERSION}.tar.xz"
+    tar -xJf "arc-theme-${ARC_VERSION}.tar.xz"
+    rm "arc-theme-${ARC_VERSION}.tar.xz"
+    cp --recursive "`pwd`/arc-theme-${ARC_VERSION}" "${CWD}"
+else
+    # Copy the arc source to the arc-theme folder so that the source can be reused if necessary
+    echo "### Copying pre-downloaded Arc source"
+    cp --recursive "${ARC_DIRECTORY}" "${CWD}"
+fi
 cd "${CWD}"
 
 echo "### Applying patch(es)"
 
 echo "### Optimising SVGs"
-find . -name "*.svg" -exec inkscape {} --vacuum-defs --export-plain-svg={} \;
-
+find . -name "*.svg" -exec inkscape --actions="export-plain-svg;vacuum-defs" {} \;
 FILETYPES=('.scss' '.svg' '.xpm' '.xml' 'rc' '.theme')
 
 echo "### Replacing arc colors with solarized colors"
@@ -226,8 +267,12 @@ done
 for PATTERN in "index.theme*" "metacity-theme-*.xml"; do
     find "${CWD}/common" -name "${PATTERN}" -exec sed -i "s/Arc/SolArc/g" {} \;
 done
-sed -i "s/Arc/SolArc/g" configure.ac;
-sed -i "s/Arc/SolArc/g" meson.options;
 
-echo "### Patching complete! You may now run autogen.sh & make in arc-theme-${ARCVERSION} as you wish"
-
+# Arc theme has fully switched to meson building as of version 20210412
+if [ -f "meson.build" ]; then
+    sed -i "s/Arc/SolArc/g" meson.build;
+    echo "### Patching complete! You may now run meson configure & meson install in arc-theme as you wish"
+else
+    sed -i "s/Arc/SolArc/g" configure.ac;
+    echo "### Patching complete! You may now run autogen.sh & make in arc-theme as you wish"
+fi
