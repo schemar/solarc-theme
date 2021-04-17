@@ -8,12 +8,15 @@ ARC_NEED_DOWNLOAD=true
 if [ -z $ARC_VERSION ]; then
     ARC_VERSION="20210412"
 fi
+# Defaults to number of CPUs for multithreading the find/exec commands
+JOBS=`nproc`
 
 usage()
 {
     echo "Calling this script with no arguments will download the most recently validated version \n"
     echo " of Arc theme and then process it. You can use --arc-version (or -v) to download a specific \n"
-    echo " version of Arc theme, or use --arc-directory (or -d) to process a pre-downloaded Arc theme \n\n"
+    echo " version of Arc theme, or use --arc-directory (or -d) to process a pre-downloaded Arc theme \n"
+    echo " You may also use --jobs (or -j) to specify how many threads should be used during the build\n\n"
     echo "You may also see this message if you used invalid arguments. "
 }
 
@@ -25,6 +28,9 @@ while [ "$1" != "" ]; do
                                 ;;
         -v | --arc-version )    shift
                                 ARC_VERSION="$1"
+                                ;;
+        -j | --jobs )           shift
+                                JOBS="$1"
                                 ;;
         -h | --help )           usage
                                 exit
@@ -250,7 +256,7 @@ cd "${CWD}"
 echo "### Applying patch(es)"
 
 echo "### Optimising SVGs"
-find . -name "*.svg" -exec inkscape --actions="export-plain-svg;vacuum-defs" {} \;
+find . -name "*.svg" -print0 | xargs --null -P $JOBS -I % inkscape --actions="export-plain-svg;vacuum-defs" % ;
 FILETYPES=('.scss' '.svg' '.xpm' '.xml' 'rc' '.theme')
 
 echo "### Replacing arc colors with solarized colors"
@@ -259,13 +265,13 @@ do
     echo "## Replacing in ${filetype}"
     for K in ${!REPLACE[@]}
     do
-        find . -type f -name "*${filetype}" -exec sed -i "s/${K}/${REPLACE[$K]}/Ig" {} \;
+        find . -type f -name "*${filetype}" -print0 | xargs --null -P $JOBS -I % sed -i "s/${K}/${REPLACE[$K]}/Ig" % ;
     done
 done
 
 # Correct index.theme metadata & output directories
 for PATTERN in "index.theme*" "metacity-theme-*.xml"; do
-    find "${CWD}/common" -name "${PATTERN}" -exec sed -i "s/Arc/SolArc/g" {} \;
+    find "${CWD}/common" -name "${PATTERN}" -print0 | xargs --null -P $JOBS -I % sed -i "s/Arc/SolArc/g" % ;
 done
 
 # Arc theme has fully switched to meson building as of version 20210412
