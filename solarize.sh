@@ -227,7 +227,10 @@ for PATTERN in "index.theme*" "metacity-theme-*.xml"; do
     find "${CWD}/common" -name "${PATTERN}" -exec sed -i "s/Arc/SolArc/g" {} \;
 done
 sed -i "s/Arc/SolArc/g" configure.ac;
-sed -i "s/Arc/SolArc/g" meson.options;
+for FILE in meson.build meson_options.txt; do
+    sed -i "s/Arc/SolArc/g" $FILE;
+    sed -i "s/arc-theme/solarc-theme/g" $FILE;
+done
 
 echo "### Patching complete! You may now run autogen.sh & make in arc-theme-${ARCVERSION} as you wish"
 
